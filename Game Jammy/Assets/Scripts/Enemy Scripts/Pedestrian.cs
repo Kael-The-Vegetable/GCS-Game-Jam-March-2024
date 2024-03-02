@@ -7,13 +7,15 @@ public class Pedestrian : Actor
 {
     public Vector3 boundingBoxPos;
     public Vector3 boundingBoxSize;
+    public float minDistance;
 
-    private Vector3 randomWalkTowards;
-    bool isAtDestination;
+
+    private Vector3 _randomWalkTowards;
+    private bool _isAtDestination;
 
     public override void Start()
     {
-        isAtDestination = true;
+        _isAtDestination = true;
         base.Start();
     }
     void Update()
@@ -29,17 +31,19 @@ public class Pedestrian : Actor
 
                 break;
             case ActorState.Walking:
-                if (isAtDestination)
+                if (_isAtDestination)
                 {
-
-                    randomWalkTowards = new Vector3(
-                        Random.Range(-boundingBoxSize.x, boundingBoxSize.x) / 2, 0,
-                        Random.Range(-boundingBoxSize.z, boundingBoxSize.z) / 2) + boundingBoxPos;
-                    isAtDestination = false;
+                    do
+                    {
+                        _randomWalkTowards = new Vector3(
+                            Random.Range(-boundingBoxSize.x, boundingBoxSize.x) / 2, 0,
+                            Random.Range(-boundingBoxSize.z, boundingBoxSize.z) / 2) + boundingBoxPos;
+                    } while (Vector3.Distance(transform.position, _randomWalkTowards) < minDistance);
+                    _isAtDestination = false;
                 }
-                if (Vector3.Distance(transform.position, randomWalkTowards) < 0.1f)
-                { isAtDestination = true; }
-                Move(randomWalkTowards);
+                if (Vector3.Distance(transform.position, _randomWalkTowards) < 0.5f)
+                { _isAtDestination = true; }
+                Move(_randomWalkTowards);
                 break;
             case ActorState.Falling:
                 Gravity();
@@ -69,7 +73,8 @@ public class Pedestrian : Actor
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boundingBoxPos, boundingBoxSize);
+        Gizmos.DrawWireSphere(transform.position, minDistance);
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(randomWalkTowards, 0.1f);
+        Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
     }
 }
