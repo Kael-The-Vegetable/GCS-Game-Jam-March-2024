@@ -39,6 +39,11 @@ public class Character : MonoBehaviour, IDamageable
                 _alive = false;
             }
         }
+
+        if (!controller.isGrounded)
+        {
+            controller.Move(Vector3.down * Time.deltaTime * Time.deltaTime);
+        }
     }
 
     Vector3 IsoNormalize(Vector3 dir)
