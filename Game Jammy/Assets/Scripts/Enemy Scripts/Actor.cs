@@ -8,9 +8,18 @@ public class Actor : MonoBehaviour, IDamageable
     private int _currentHealth;
     public int speed;
 
+    public enum ActorState
+    {
+        Idle,
+        Walking,
+        Panic,
+        Attack
+    }
+    public ActorState state;
+
     private CharacterController _charController;
 
-    void Start()
+    public virtual void Start()
     {
         _charController = GetComponent<CharacterController>();
         _currentHealth = maxHealth;
