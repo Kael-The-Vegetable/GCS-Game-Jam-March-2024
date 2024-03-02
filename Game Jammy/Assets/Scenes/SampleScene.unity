@@ -803,11 +803,8 @@ MonoBehaviour:
   speed: 2
   rotateSpeed: 5
   state: 1
-  walkingLoop:
-  - {x: 10, y: 1, z: 10}
-  - {x: 0, y: 1, z: 10}
-  - {x: 4, y: 1, z: 0}
-  - {x: 6, y: 1, z: -5}
+  boundingBoxPos: {x: 10, y: 1, z: 0}
+  boundingBoxSize: {x: 10, y: 2, z: 10}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

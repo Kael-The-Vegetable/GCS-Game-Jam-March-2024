@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class Pedestrian : Actor
 {
-    public List<Vector3> walkingLoop;
-    private int walkLoopIndex = 0;
+    public Vector3 boundingBoxPos;
+    public Vector3 boundingBoxSize;
 
+    private Vector3 randomWalkTowards;
+    bool isAtDestination;
 
     public override void Start()
     {
+        isAtDestination = true;
         base.Start();
     }
     void Update()
@@ -19,17 +22,24 @@ public class Pedestrian : Actor
         {
             state = ActorState.Falling;
         }
+        
         switch (state)
         {
             case ActorState.Idle: 
 
                 break;
             case ActorState.Walking:
-                if (Vector3.Distance(transform.position, walkingLoop[walkLoopIndex]) < 1)
-                { walkLoopIndex++; }
-                if (walkLoopIndex == walkingLoop.Count)
-                { walkLoopIndex = 0; }
-                Move(walkingLoop[walkLoopIndex]);
+                if (isAtDestination)
+                {
+
+                    randomWalkTowards = new Vector3(
+                        Random.Range(-boundingBoxSize.x, boundingBoxSize.x) / 2, 0,
+                        Random.Range(-boundingBoxSize.z, boundingBoxSize.z) / 2) + boundingBoxPos;
+                    isAtDestination = false;
+                }
+                if (Vector3.Distance(transform.position, randomWalkTowards) < 0.1f)
+                { isAtDestination = true; }
+                Move(randomWalkTowards);
                 break;
             case ActorState.Falling:
                 Gravity();
@@ -52,7 +62,14 @@ public class Pedestrian : Actor
     private void Gravity()
     {
         float gravity = WorldManager.Global.Gravity;
-        Vector3 downwardVel = Vector3.up * gravity * Time.deltaTime;
+        Vector3 downwardVel = new Vector3(0, gravity * Time.deltaTime);
         controller.Move((controller.velocity + downwardVel) * Time.deltaTime);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boundingBoxPos, boundingBoxSize);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(randomWalkTowards, 0.1f);
     }
 }
