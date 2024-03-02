@@ -15,11 +15,6 @@ public class Actor : MonoBehaviour, IDamageable
         _charController = GetComponent<CharacterController>();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void Move(Vector3 targetDestination)
     {
         Vector3 distanceToTravel = targetDestination - transform.position;
