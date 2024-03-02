@@ -19,12 +19,12 @@ public class Actor : MonoBehaviour, IDamageable
     }
     public ActorState state;
 
-    internal CharacterController charController;
+    internal CharacterController controller;
 
     public virtual void Start()
     {
         float gravity = WorldManager.Global.Gravity;
-        charController = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         _currentHealth = maxHealth;
     }
 
@@ -34,7 +34,7 @@ public class Actor : MonoBehaviour, IDamageable
         Vector3 direction = distanceToTravel.normalized;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
-        charController.Move(direction * speed * Time.deltaTime);
+        controller.Move(direction * speed * Time.deltaTime);
     }
     public void TakeDamage(int damage)
     {
