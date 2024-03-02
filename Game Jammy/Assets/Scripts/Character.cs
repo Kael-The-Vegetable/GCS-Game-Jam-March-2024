@@ -1,4 +1,5 @@
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour, IDamageable
@@ -18,17 +19,19 @@ public class Character : MonoBehaviour, IDamageable
     void Start()
     {
         _currentHealth = maxHealth;
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
+
         // if the character is grounded and the cooldown is 0, then the character can jump
         _canJump = _isGrounded && _currentCooldown == 0;
 
         _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
         controller.Move(_moveDirection * speed * Time.deltaTime);
+
     }
 
 
