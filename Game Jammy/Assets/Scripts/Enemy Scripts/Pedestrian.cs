@@ -53,6 +53,6 @@ public class Pedestrian : Actor
     {
         float gravity = WorldManager.Global.Gravity;
         Vector3 downwardVel = Vector3.up * gravity * Time.deltaTime;
-        controller.Move(controller.velocity + downwardVel * Time.deltaTime);
+        controller.Move((controller.velocity + downwardVel) * Time.deltaTime);
     }
 }

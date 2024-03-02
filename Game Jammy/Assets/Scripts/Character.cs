@@ -49,8 +49,9 @@ public class Character : MonoBehaviour, IDamageable
     {
         float gravity = WorldManager.Global.Gravity;
         Vector3 downwardVel = Vector3.up * gravity * Time.deltaTime;
-        controller.Move(controller.velocity + downwardVel * Time.deltaTime);
+        controller.Move((controller.velocity + downwardVel) * Time.deltaTime);
     }
+
     Vector3 IsoNormalize(Vector3 dir)
     {
         return (Quaternion.Euler(0, 45, 0) * dir).normalized;
