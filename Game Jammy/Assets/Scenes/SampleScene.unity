@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTransform: {fileID: 599750074}
-  cameraState: 1
+  cameraState: 0
 --- !u!1 &1104691701
 GameObject:
   m_ObjectHideFlags: 0

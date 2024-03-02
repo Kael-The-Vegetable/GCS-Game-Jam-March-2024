@@ -25,7 +25,7 @@ public class Character : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        if (_alive)
+        if (_alive) // if alive then you an do all this.
         {
             
             // if the character is grounded and the cooldown is 0, then the character can jump
@@ -42,9 +42,12 @@ public class Character : MonoBehaviour, IDamageable
         }
     }
 
+    
+
 
     public void TakeDamage(int damage)
     {
+        // take X amount of damage when this is called.
         _currentHealth -= damage;
     }
 }
