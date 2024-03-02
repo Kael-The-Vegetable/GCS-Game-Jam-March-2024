@@ -13,6 +13,7 @@ public class Actor : MonoBehaviour, IDamageable
     void Start()
     {
         _charController = GetComponent<CharacterController>();
+        _currentHealth = maxHealth;
     }
 
     public void Move(Vector3 targetDestination)
@@ -23,6 +24,10 @@ public class Actor : MonoBehaviour, IDamageable
     }
     public void TakeDamage(int damage)
     {
-        throw new System.NotImplementedException();
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
