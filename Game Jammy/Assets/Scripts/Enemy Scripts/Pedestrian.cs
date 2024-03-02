@@ -32,6 +32,9 @@ public class Pedestrian : Actor
             case ActorState.Attack: 
 
                 break;
+            case ActorState.Dead:
+
+                break;
         }
     }
 }

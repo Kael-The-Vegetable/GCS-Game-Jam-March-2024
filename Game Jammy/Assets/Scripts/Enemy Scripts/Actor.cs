@@ -7,13 +7,15 @@ public class Actor : MonoBehaviour, IDamageable
     public int maxHealth;
     private int _currentHealth;
     public int speed;
-
+    public float rotateSpeed;
+    public float dampingMin;
     public enum ActorState
     {
         Idle,
         Walking,
         Panic,
-        Attack
+        Attack,
+        Dead
     }
     public ActorState state;
 
@@ -29,14 +31,15 @@ public class Actor : MonoBehaviour, IDamageable
     {
         Vector3 distanceToTravel = targetDestination - transform.position;
         Vector3 direction = distanceToTravel.normalized;
+        Quaternion angle = Quaternion.LookRotation(direction);
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, angle, rotateSpeed * Time.deltaTime);
         _charController.Move(direction * speed * Time.deltaTime);
     }
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
         if (_currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        { state = ActorState.Dead; }
     }
 }
