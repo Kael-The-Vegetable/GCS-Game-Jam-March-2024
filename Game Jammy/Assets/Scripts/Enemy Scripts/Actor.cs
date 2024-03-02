@@ -8,6 +8,7 @@ public class Actor : MonoBehaviour, IDamageable
     private int _currentHealth;
     public int speed;
     public float rotateSpeed;
+    public float dampingMin;
     public enum ActorState
     {
         Idle,
