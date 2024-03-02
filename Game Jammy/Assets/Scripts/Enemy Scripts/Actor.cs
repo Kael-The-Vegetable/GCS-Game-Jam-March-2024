@@ -12,6 +12,7 @@ public class Actor : MonoBehaviour, IDamageable
     {
         Idle,
         Walking,
+        Falling,
         Panic,
         Attack,
         Dead

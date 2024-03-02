@@ -7,13 +7,20 @@ public class Pedestrian : Actor
 {
     public List<Vector3> walkingLoop;
     private int walkLoopIndex = 0;
-    
+    private Vector3 velocity; 
+
+
     public override void Start()
     {
+        velocity = Vector3.zero;
         base.Start();
     }
     void Update()
     {
+        if (!charController.isGrounded)
+        {
+            state = ActorState.Falling;
+        }
         switch (state)
         {
             case ActorState.Idle: 
@@ -24,8 +31,15 @@ public class Pedestrian : Actor
                 { walkLoopIndex++; }
                 if (walkLoopIndex == walkingLoop.Count)
                 { walkLoopIndex = 0; }
-
                 Move(walkingLoop[walkLoopIndex]);
+                break;
+            case ActorState.Falling:
+                Gravity();
+                if (charController.isGrounded)
+                { 
+                    velocity.y = 0;
+                    state = ActorState.Walking; 
+                }
                 break;
             case ActorState.Panic: 
 
@@ -42,7 +56,9 @@ public class Pedestrian : Actor
     {
         if (!charController.isGrounded)
         {
-
+            float gravity = WorldManager.Global.Gravity;
+            velocity.y += gravity * Time.deltaTime;
+            charController.Move(velocity * Time.deltaTime);
         }
     }
 }
