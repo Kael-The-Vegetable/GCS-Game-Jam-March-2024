@@ -8,7 +8,6 @@ public class Actor : MonoBehaviour, IDamageable
     private int _currentHealth;
     public int speed;
     public float rotateSpeed;
-    public float dampingMin;
     public enum ActorState
     {
         Idle,
@@ -31,9 +30,8 @@ public class Actor : MonoBehaviour, IDamageable
     {
         Vector3 distanceToTravel = targetDestination - transform.position;
         Vector3 direction = distanceToTravel.normalized;
-        Quaternion angle = Quaternion.LookRotation(direction);
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, angle, rotateSpeed * Time.deltaTime);
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
         _charController.Move(direction * speed * Time.deltaTime);
     }
     public void TakeDamage(int damage)
