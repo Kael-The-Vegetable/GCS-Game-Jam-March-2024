@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pedestrian : Actor
 {
     public List<Vector3> walkingLoop;
     private int walkLoopIndex = 0;
-
+    
     public override void Start()
     {
         base.Start();
@@ -35,6 +36,13 @@ public class Pedestrian : Actor
             case ActorState.Dead:
 
                 break;
+        }
+    }
+    private void Gravity()
+    {
+        if (!charController.isGrounded)
+        {
+
         }
     }
 }
