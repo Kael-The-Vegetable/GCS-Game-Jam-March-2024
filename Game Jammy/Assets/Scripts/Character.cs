@@ -27,13 +27,12 @@ public class Character : MonoBehaviour, IDamageable
     {
         if (_alive) // if alive then you an do all this.
         {
-            
             // if the character is grounded and the cooldown is 0, then the character can jump
             _canJump = _isGrounded && _currentCooldown == 0;
 
             _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
-            controller.Move(_moveDirection * speed * Time.deltaTime);
+            controller.Move(IsoNormalize(_moveDirection) * speed * Time.deltaTime);
 
             if (_currentHealth <= 0)
             {
@@ -42,8 +41,10 @@ public class Character : MonoBehaviour, IDamageable
         }
     }
 
-    
-
+    Vector3 IsoNormalize(Vector3 dir)
+    {
+        return (Quaternion.Euler(0, 45, 0) * dir).normalized;
+    }
 
     public void TakeDamage(int damage)
     {
