@@ -73,7 +73,7 @@ public class Pedestrian : Actor
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boundingBoxPos, boundingBoxSize);
-        Gizmos.DrawWireSphere(transform.position, minDistance);
+        //Gizmos.DrawWireSphere(transform.position, minDistance);
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
     }
