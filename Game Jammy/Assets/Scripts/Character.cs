@@ -12,7 +12,7 @@ public class Character : MonoBehaviour, IDamageable
     public Transform _groundCheck;
     public LayerMask groundmask;
     public Attack stomp;
-    public Attack jump;
+    public Attack punch;
 
     private float _currentCooldown;
     private int _currentHealth;
@@ -44,13 +44,18 @@ public class Character : MonoBehaviour, IDamageable
 
             if (_canStomp)
             {
-                Stomp();
+                
             }
 
-            if (Input.GetButtonDown("Fire"))
+            if (Input.GetButtonDown("Stomp"))
             {
-
+                stomp.OnAttack();
             }
+            if (Input.GetButtonDown("Punch"))
+            {
+                punch.OnAttack();
+            }
+
 
             _moveDirection = IsoNormalize(_moveDirection);
            
