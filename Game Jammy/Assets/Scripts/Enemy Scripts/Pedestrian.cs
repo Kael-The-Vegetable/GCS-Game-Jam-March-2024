@@ -9,7 +9,7 @@ public class Pedestrian : Actor
     public Vector3 BoundingBoxPos { get; private set; }
     public Vector3 boundingBoxSize;
     public float minDistance;
-
+    public AudioSource damageSound;
     private Vector3 _randomWalkTowards;
     private bool _isAtDestination;
     public float scaredDistance;
@@ -93,6 +93,9 @@ public class Pedestrian : Actor
     }
     private IEnumerator Death(float length)
     {
+        damageSound.clip = (AudioClip)Resources.Load("Scream");
+        damageSound.pitch = Random.Range(0.5f, 1.5f);
+        damageSound.Play();
         yield return new WaitForSeconds(length / 2);
         float timeRemaining = length / 2;
         do
