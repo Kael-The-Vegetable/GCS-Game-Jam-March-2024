@@ -6,7 +6,7 @@ public abstract class Attack : MonoBehaviour
 {
 
     public BoxCollider _hitBox;
-    public float _attackCooldown;
+    public float attackCooldown;
     private List<Collider> _hitList = new List<Collider>();
     public int _attackDamage = 10;
     private float _currentAttackCooldown;
@@ -23,7 +23,7 @@ public abstract class Attack : MonoBehaviour
         if (_currentAttackCooldown > 0)
         {
             _currentAttackCooldown -= Time.deltaTime;
-            _currentAttackCooldown = Mathf.Clamp(_currentAttackCooldown, 0, _currentAttackCooldown);
+            _currentAttackCooldown = Mathf.Clamp(_currentAttackCooldown, 0, attackCooldown);
         }
     }
 
