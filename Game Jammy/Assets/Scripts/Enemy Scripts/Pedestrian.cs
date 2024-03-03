@@ -53,6 +53,7 @@ public class Pedestrian : Actor
 
                 break;
             case ActorState.Dead:
+                agent.SetDestination(transform.position);
                 transform.localScale = new Vector3(transform.localScale.x, 0.1f, transform.localScale.z);
                 break;
         }
