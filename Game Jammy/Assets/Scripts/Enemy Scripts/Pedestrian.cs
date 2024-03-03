@@ -48,28 +48,22 @@ public class Pedestrian : Actor
                 }
                 if (Vector3.Distance(transform.position, _randomWalkTowards) < 1f)
                 { _isAtDestination = true; }
-                if (agent.velocity.magnitude < 1)
-                { StartCoroutine(CheckIfStuck(1)); }
+                if (agent.velocity.magnitude < 0.5f) { StartCoroutine(CheckIfStuck(1)); }
                     break;
             case ActorState.Falling:
                 break;
             case ActorState.Panic:
-                float panicSpeed = speed * 1.5f;
+                float panicSpeed = speed * 2;
                 agent.speed = panicSpeed;
-                if (_isAtDestination)
+                Vector3 normalDirection = (WorldManager.Global.PlayerPos - transform.position).normalized;
+                normalDirection = Quaternion.AngleAxis(Random.Range(0, 15f), Vector3.up) * normalDirection;
+                agent.SetDestination(transform.position - (normalDirection * scaredDistance));
+                if ( Vector3.Distance(transform.position, WorldManager.Global.PlayerPos) > scaredDistance * 1.5f)
                 {
-                    do
-                    {
-                        RandomPoint(transform.position, boundingBoxSize, out _randomWalkTowards);
-                    } while (Vector3.Angle(-(transform.position - WorldManager.Global.PlayerPos), _randomWalkTowards) < 0.1f);
-                    _isAtDestination = false;
-                }
-                if (Vector3.Distance(transform.position, _randomWalkTowards) < 1f)
-                { 
                     _isAtDestination = true;
                     state = ActorState.Walking;
+                    agent.speed = speed;
                 }
-                agent.SetDestination(_randomWalkTowards);
                 break;
             case ActorState.Attack: 
                 break;
@@ -82,7 +76,7 @@ public class Pedestrian : Actor
     private IEnumerator CheckIfStuck(float timeDelay)
     {
         yield return new WaitForSeconds(timeDelay);
-        if (agent.velocity.magnitude < 1)
+        if (agent.velocity.magnitude < 0.5f)
         { _isAtDestination = true; }
     }
     private void OnDrawGizmos()
