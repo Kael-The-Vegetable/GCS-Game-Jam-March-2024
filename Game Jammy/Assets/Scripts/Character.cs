@@ -35,7 +35,7 @@ public class Character : MonoBehaviour, IDamageable
     }
     
     private Vector3 _moveDirection;
-    private Vector3 _lookDirection;
+    private Vector3 _lookDirection = new Vector3(0.0001f, 0, 0.0001f);
     private Vector3 _velocity;
     private Vector3 _lastVelocity;
     private Vector3 _downwardVel;
@@ -48,8 +48,10 @@ public class Character : MonoBehaviour, IDamageable
 
         if (_moveDirection != Vector3.zero)
         { _lookDirection = _moveDirection; }
+
         Quaternion rotation = Quaternion.LookRotation(_lookDirection);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
+        
 
         _currentState = CharacterStates.Walking;
 
