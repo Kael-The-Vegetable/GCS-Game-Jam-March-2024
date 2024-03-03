@@ -21,6 +21,8 @@ public class Pedestrian : Actor
         _isAtDestination = true;
         BoundingBoxPos = transform.position;
         base.Start();
+        agent.speed = speed;
+        agent.angularSpeed = rotateSpeed;
     }
     void Update()
     {
@@ -82,6 +84,15 @@ public class Pedestrian : Actor
                 result = hit.position;
                 return true;
             }
+        }
+        result = Vector3.zero;
+        return false;
+    }
+    private bool RandomPoint(Vector3 center, Vector3 size, out Vector3 result)
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            
         }
         result = Vector3.zero;
         return false;
