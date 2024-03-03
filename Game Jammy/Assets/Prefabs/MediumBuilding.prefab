@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MediumBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 637f63437eb0a9e43a9733ceabec80eb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 637f63437eb0a9e43a9733ceabec80eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: 637f63437eb0a9e43a9733ceabec80eb, type: 3}
     m_RemovedGameObjects: []
