@@ -150,4 +150,5 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 1, z: 10}
   minDistance: 1
+  scream: {fileID: 0}
   scaredDistance: 8
