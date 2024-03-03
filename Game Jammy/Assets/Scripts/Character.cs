@@ -47,13 +47,16 @@ public class Character : MonoBehaviour, IDamageable
         _velocity = _moveDirection * speed * Time.deltaTime;
 
         if (_moveDirection != Vector3.zero)
-        { _lookDirection = _moveDirection; }
+        { 
+            _lookDirection = _moveDirection;
+            _currentState = CharacterStates.Walking;
+        }
 
         Quaternion rotation = Quaternion.LookRotation(_lookDirection);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
         
 
-        _currentState = CharacterStates.Walking;
+       
 
         if (!_isGrounded)
         {
@@ -78,6 +81,7 @@ public class Character : MonoBehaviour, IDamageable
 
         if (_alive) // if alive then you can do all this.
         {
+            _currentState = CharacterStates.Idle;
             if (_attacking == false)
             {
                 HandleMovement();
@@ -95,7 +99,7 @@ public class Character : MonoBehaviour, IDamageable
                     break;
                 case CharacterStates.Punching:
                     break;
-                default:
+                case CharacterStates.Idle:
                     animator.SetBool("Walking", false);
                     break;
             }
