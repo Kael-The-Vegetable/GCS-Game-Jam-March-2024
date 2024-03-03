@@ -8,10 +8,8 @@ using UnityEngine.AI;
 public class Pedestrian : Actor
 {
     public Vector3 BoundingBoxPos { get; private set; }
-    public float boundingBoxRadius;
+    public Vector3 boundingBoxSize;
     public float minDistance;
-
-    public NavMeshAgent agent;
 
     private Vector3 _randomWalkTowards;
     private bool _isAtDestination;
@@ -26,11 +24,6 @@ public class Pedestrian : Actor
     }
     void Update()
     {
-        if (!controller.isGrounded)
-        {
-            state = ActorState.Falling;
-        }
-        
         switch (state)
         {
             case ActorState.Idle: 
@@ -41,7 +34,7 @@ public class Pedestrian : Actor
                 {
                     do
                     {
-                        RandomPoint(BoundingBoxPos, boundingBoxRadius, out _randomWalkTowards);
+                        RandomPoint(BoundingBoxPos, boundingBoxSize, out _randomWalkTowards);
                     } while (Vector3.Distance(transform.position, _randomWalkTowards) < minDistance);
                     _isAtDestination = false;
                 }
@@ -50,11 +43,6 @@ public class Pedestrian : Actor
                 agent.SetDestination(_randomWalkTowards);
                 break;
             case ActorState.Falling:
-                Gravity();
-                if (controller.isGrounded)
-                { 
-                    state = ActorState.Walking; 
-                }
                 break;
             case ActorState.Panic: 
 
@@ -66,12 +54,6 @@ public class Pedestrian : Actor
                 transform.localScale = new Vector3(transform.localScale.x, 0.1f, transform.localScale.z);
                 break;
         }
-    }
-    private void Gravity()
-    {
-        float gravity = WorldManager.Global.Gravity;
-        Vector3 downwardVel = new Vector3(0, gravity * Time.deltaTime);
-        controller.Move((controller.velocity + downwardVel) * Time.deltaTime);
     }
     private bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -88,20 +70,10 @@ public class Pedestrian : Actor
         result = Vector3.zero;
         return false;
     }
-    private bool RandomPoint(Vector3 center, Vector3 size, out Vector3 result)
-    {
-        for (int i = 0; i < 30; i++)
-        {
-            
-        }
-        result = Vector3.zero;
-        return false;
-    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(BoundingBoxPos, boundingBoxRadius);
-        //Gizmos.DrawWireSphere(transform.position, minDistance);
+        Gizmos.DrawWireCube(BoundingBoxPos, boundingBoxSize * 2);
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
     }

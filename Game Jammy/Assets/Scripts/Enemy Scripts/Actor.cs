@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Actor : MonoBehaviour, IDamageable
 {
@@ -8,6 +9,7 @@ public class Actor : MonoBehaviour, IDamageable
     private int _currentHealth;
     public int speed;
     public float rotateSpeed;
+    public NavMeshAgent agent;
     public enum ActorState
     {
         Idle,
@@ -19,22 +21,34 @@ public class Actor : MonoBehaviour, IDamageable
     }
     public ActorState state;
 
-    internal CharacterController controller;
-
     public virtual void Start()
     {
         float gravity = WorldManager.Global.Gravity;
-        controller = GetComponent<CharacterController>();
         _currentHealth = maxHealth;
     }
 
-    public void Move(Vector3 targetDestination)
+    //public void Move(Vector3 targetDestination)
+    //{
+    //    Vector3 distanceToTravel = targetDestination - transform.position;
+    //    Vector3 direction = distanceToTravel.normalized;
+    //    Quaternion rotation = Quaternion.LookRotation(direction);
+    //    transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
+    //    controller.Move(direction * speed * Time.deltaTime);
+    //}
+    public bool RandomPoint(Vector3 center, Vector3 size, out Vector3 result)
     {
-        Vector3 distanceToTravel = targetDestination - transform.position;
-        Vector3 direction = distanceToTravel.normalized;
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
-        controller.Move(direction * speed * Time.deltaTime);
+        for (int i = 0; i < 30; i++)
+        {
+            Vector3 randomLocation = new Vector3(Random.Range(-size.x, size.x), 0, Random.Range(-size.z, size.z)) + center;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomLocation, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                result = hit.position;
+                return true;
+            }
+        }
+        result = Vector3.zero;
+        return false;
     }
     public void TakeDamage(int damage)
     {

@@ -134,8 +134,7 @@ GameObject:
   - component: {fileID: 227013382}
   - component: {fileID: 227013381}
   - component: {fileID: 227013380}
-  - component: {fileID: 227013379}
-  - component: {fileID: 227013378}
+  - component: {fileID: 227013383}
   - component: {fileID: 227013377}
   - component: {fileID: 227013376}
   m_Layer: 0
@@ -160,10 +159,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 227013377}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &227013377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -186,55 +185,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &227013378
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227013375}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &227013379
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227013375}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &227013380
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -294,12 +244,35 @@ Transform:
   m_GameObject: {fileID: 227013375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &227013383
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227013375}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &248372455
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,8 +328,7 @@ GameObject:
   - component: {fileID: 417217212}
   - component: {fileID: 417217211}
   - component: {fileID: 417217210}
-  - component: {fileID: 417217209}
-  - component: {fileID: 417217208}
+  - component: {fileID: 417217213}
   - component: {fileID: 417217207}
   - component: {fileID: 417217206}
   m_Layer: 0
@@ -381,10 +353,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 417217207}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &417217207
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -407,55 +379,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &417217208
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417217205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &417217209
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417217205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &417217210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -515,8 +438,153 @@ Transform:
   m_GameObject: {fileID: 417217205}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &417217213
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417217205}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &529643126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529643131}
+  - component: {fileID: 529643130}
+  - component: {fileID: 529643129}
+  - component: {fileID: 529643128}
+  - component: {fileID: 529643127}
+  m_Layer: 0
+  m_Name: Cube (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!208 &529643127
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529643126}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &529643128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529643126}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &529643129
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529643126}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &529643130
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529643126}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &529643131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529643126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.93, y: 0.61, z: 15.36}
+  m_LocalScale: {x: 5, y: 2, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -532,8 +600,7 @@ GameObject:
   - component: {fileID: 564854015}
   - component: {fileID: 564854014}
   - component: {fileID: 564854013}
-  - component: {fileID: 564854012}
-  - component: {fileID: 564854011}
+  - component: {fileID: 564854016}
   - component: {fileID: 564854010}
   - component: {fileID: 564854009}
   m_Layer: 0
@@ -558,10 +625,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 564854010}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &564854010
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -584,55 +651,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &564854011
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564854008}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &564854012
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564854008}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &564854013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -692,12 +710,35 @@ Transform:
   m_GameObject: {fileID: 564854008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &564854016
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564854008}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &599750073
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,8 +831,7 @@ GameObject:
   - component: {fileID: 618156237}
   - component: {fileID: 618156236}
   - component: {fileID: 618156235}
-  - component: {fileID: 618156234}
-  - component: {fileID: 618156233}
+  - component: {fileID: 618156238}
   - component: {fileID: 618156232}
   - component: {fileID: 618156231}
   m_Layer: 0
@@ -816,10 +856,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 618156232}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &618156232
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -842,55 +882,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &618156233
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618156230}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &618156234
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618156230}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &618156235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -950,12 +941,35 @@ Transform:
   m_GameObject: {fileID: 618156230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &618156238
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618156230}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &676497276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,8 +1106,7 @@ GameObject:
   - component: {fileID: 753128155}
   - component: {fileID: 753128154}
   - component: {fileID: 753128153}
-  - component: {fileID: 753128152}
-  - component: {fileID: 753128151}
+  - component: {fileID: 753128156}
   - component: {fileID: 753128150}
   - component: {fileID: 753128149}
   m_Layer: 0
@@ -1118,10 +1131,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 753128150}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &753128150
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1144,55 +1157,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &753128151
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753128148}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &753128152
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753128148}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &753128153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1252,12 +1216,35 @@ Transform:
   m_GameObject: {fileID: 753128148}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &753128156
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753128148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &809150747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,8 +1256,7 @@ GameObject:
   - component: {fileID: 809150754}
   - component: {fileID: 809150753}
   - component: {fileID: 809150752}
-  - component: {fileID: 809150751}
-  - component: {fileID: 809150750}
+  - component: {fileID: 809150755}
   - component: {fileID: 809150749}
   - component: {fileID: 809150748}
   m_Layer: 0
@@ -1295,10 +1281,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 809150749}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &809150749
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1321,55 +1307,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &809150750
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809150747}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &809150751
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809150747}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &809150752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1429,12 +1366,35 @@ Transform:
   m_GameObject: {fileID: 809150747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &809150755
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809150747}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,8 +1740,7 @@ GameObject:
   - component: {fileID: 1121825908}
   - component: {fileID: 1121825907}
   - component: {fileID: 1121825906}
-  - component: {fileID: 1121825905}
-  - component: {fileID: 1121825904}
+  - component: {fileID: 1121825909}
   - component: {fileID: 1121825903}
   - component: {fileID: 1121825902}
   m_Layer: 0
@@ -1806,10 +1765,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1121825903}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1121825903
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1832,55 +1791,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1121825904
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121825901}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1121825905
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121825901}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1121825906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1940,12 +1850,35 @@ Transform:
   m_GameObject: {fileID: 1121825901}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1121825909
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121825901}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1134772060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,8 +1890,7 @@ GameObject:
   - component: {fileID: 1134772067}
   - component: {fileID: 1134772066}
   - component: {fileID: 1134772065}
-  - component: {fileID: 1134772064}
-  - component: {fileID: 1134772063}
+  - component: {fileID: 1134772068}
   - component: {fileID: 1134772062}
   - component: {fileID: 1134772061}
   m_Layer: 0
@@ -1983,10 +1915,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1134772062}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1134772062
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2009,55 +1941,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1134772063
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134772060}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1134772064
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134772060}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1134772065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2117,12 +2000,35 @@ Transform:
   m_GameObject: {fileID: 1134772060}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1134772068
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134772060}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1231375677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,8 +2040,7 @@ GameObject:
   - component: {fileID: 1231375684}
   - component: {fileID: 1231375683}
   - component: {fileID: 1231375682}
-  - component: {fileID: 1231375681}
-  - component: {fileID: 1231375680}
+  - component: {fileID: 1231375685}
   - component: {fileID: 1231375679}
   - component: {fileID: 1231375678}
   m_Layer: 0
@@ -2160,10 +2065,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1231375679}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1231375679
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2186,55 +2091,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1231375680
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231375677}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1231375681
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231375677}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1231375682
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2294,8 +2150,153 @@ Transform:
   m_GameObject: {fileID: 1231375677}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1231375685
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231375677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1242896525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242896530}
+  - component: {fileID: 1242896529}
+  - component: {fileID: 1242896528}
+  - component: {fileID: 1242896527}
+  - component: {fileID: 1242896526}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!208 &1242896526
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242896525}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &1242896527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242896525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1242896528
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242896525}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1242896529
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242896525}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1242896530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242896525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.87, y: 0.61, z: 8.46}
+  m_LocalScale: {x: 5, y: 2, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2311,8 +2312,7 @@ GameObject:
   - component: {fileID: 1270144154}
   - component: {fileID: 1270144153}
   - component: {fileID: 1270144152}
-  - component: {fileID: 1270144151}
-  - component: {fileID: 1270144150}
+  - component: {fileID: 1270144155}
   - component: {fileID: 1270144149}
   - component: {fileID: 1270144148}
   m_Layer: 0
@@ -2337,10 +2337,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1270144149}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1270144149
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2363,55 +2363,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1270144150
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270144147}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1270144151
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270144147}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1270144152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2471,12 +2422,35 @@ Transform:
   m_GameObject: {fileID: 1270144147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1270144155
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270144147}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1360619677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,8 +2567,7 @@ GameObject:
   - component: {fileID: 1508531033}
   - component: {fileID: 1508531032}
   - component: {fileID: 1508531031}
-  - component: {fileID: 1508531030}
-  - component: {fileID: 1508531029}
+  - component: {fileID: 1508531034}
   - component: {fileID: 1508531028}
   - component: {fileID: 1508531027}
   m_Layer: 0
@@ -2619,10 +2592,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1508531028}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1508531028
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2645,55 +2618,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1508531029
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508531026}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1508531030
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508531026}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1508531031
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2753,12 +2677,35 @@ Transform:
   m_GameObject: {fileID: 1508531026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1508531034
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508531026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1684371284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,8 +2717,7 @@ GameObject:
   - component: {fileID: 1684371291}
   - component: {fileID: 1684371290}
   - component: {fileID: 1684371289}
-  - component: {fileID: 1684371288}
-  - component: {fileID: 1684371287}
+  - component: {fileID: 1684371292}
   - component: {fileID: 1684371286}
   - component: {fileID: 1684371285}
   m_Layer: 0
@@ -2796,10 +2742,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1684371286}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1684371286
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2822,55 +2768,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1684371287
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684371284}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1684371288
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684371284}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1684371289
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2930,12 +2827,35 @@ Transform:
   m_GameObject: {fileID: 1684371284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1684371292
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684371284}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1808288990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,8 +2867,7 @@ GameObject:
   - component: {fileID: 1808288997}
   - component: {fileID: 1808288996}
   - component: {fileID: 1808288995}
-  - component: {fileID: 1808288994}
-  - component: {fileID: 1808288993}
+  - component: {fileID: 1808288998}
   - component: {fileID: 1808288992}
   - component: {fileID: 1808288991}
   m_Layer: 0
@@ -2973,10 +2892,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1808288992}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1808288992
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2999,55 +2918,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1808288993
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808288990}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1808288994
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808288990}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1808288995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3107,12 +2977,35 @@ Transform:
   m_GameObject: {fileID: 1808288990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1808288998
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808288990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1860520042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,8 +3017,7 @@ GameObject:
   - component: {fileID: 1860520049}
   - component: {fileID: 1860520048}
   - component: {fileID: 1860520047}
-  - component: {fileID: 1860520046}
-  - component: {fileID: 1860520045}
+  - component: {fileID: 1860520050}
   - component: {fileID: 1860520044}
   - component: {fileID: 1860520043}
   m_Layer: 0
@@ -3150,10 +3042,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1860520044}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1860520044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3176,55 +3068,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1860520045
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860520042}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1860520046
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860520042}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1860520047
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3284,12 +3127,35 @@ Transform:
   m_GameObject: {fileID: 1860520042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1860520050
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860520042}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1861166405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,7 +3168,6 @@ GameObject:
   - component: {fileID: 1861166410}
   - component: {fileID: 1861166409}
   - component: {fileID: 1861166414}
-  - component: {fileID: 1861166407}
   - component: {fileID: 1861166413}
   - component: {fileID: 1861166412}
   m_Layer: 0
@@ -3312,32 +3177,6 @@ GameObject:
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!143 &1861166407
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861166405}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1861166409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3397,7 +3236,7 @@ Transform:
   m_GameObject: {fileID: 1861166405}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3418,10 +3257,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1861166413}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1861166413
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3459,7 +3298,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3478,8 +3317,7 @@ GameObject:
   - component: {fileID: 1880796623}
   - component: {fileID: 1880796622}
   - component: {fileID: 1880796621}
-  - component: {fileID: 1880796620}
-  - component: {fileID: 1880796619}
+  - component: {fileID: 1880796624}
   - component: {fileID: 1880796618}
   - component: {fileID: 1880796617}
   m_Layer: 0
@@ -3504,10 +3342,10 @@ MonoBehaviour:
   maxHealth: 1
   speed: 2
   rotateSpeed: 360
-  state: 1
-  boundingBoxRadius: 10
-  minDistance: 1
   agent: {fileID: 1880796618}
+  state: 1
+  boundingBoxSize: {x: 10, y: 10, z: 10}
+  minDistance: 1
 --- !u!195 &1880796618
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3530,55 +3368,6 @@ NavMeshAgent:
   m_BaseOffset: 0.99999994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!143 &1880796619
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880796616}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1880796620
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880796616}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1880796621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3638,12 +3427,35 @@ Transform:
   m_GameObject: {fileID: 1880796616}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 10, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9.15, y: 1.105, z: 10.61}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1880796624
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880796616}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3670,3 +3482,5 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 248372457}
   - {fileID: 1036758579}
+  - {fileID: 1242896530}
+  - {fileID: 529643131}
