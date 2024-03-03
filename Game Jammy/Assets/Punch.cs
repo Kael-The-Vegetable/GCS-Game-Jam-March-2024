@@ -9,7 +9,10 @@ public class Punch : Attack
     public Character character;
     public override void OnAttack()
     {
-        character.attacking = true;
+        if (_currentAttackCooldown == 0)
+        {
+            character.attacking = true;
+        }
     }
 
 

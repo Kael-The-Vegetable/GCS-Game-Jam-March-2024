@@ -7,13 +7,16 @@ public class Stomp : Attack
     public Character character;
     public override void OnAttack()
     {
-        character.attacking = true;
+        if (_currentAttackCooldown == 0)
+        {
+            character.attacking = true;
+        }
     }
 
 
     public void DealDamage()
     {
-        CameraShaker.Invoke();
+        CameraShaker.Invoke(new Vector3(0.5f, 0.5f, 0.5f), new Vector3(0.5f, 0.5f, 0.5f));
         base.OnAttack();
     }
 

@@ -7,20 +7,18 @@ using UnityEngine;
 public class CameraShaker : MonoBehaviour
 {
     public Transform cameraTransform;
-    public Vector3 positionStrength;
-    public Vector3 rotationalStrength;
 
-    public static event Action OnCameraShake;
+    public static event Action<Vector3,Vector3> OnCameraShake;
 
-    public static void Invoke()
+    public static void Invoke(Vector3 positionStrength, Vector3 rotationalStrength)
     {
-        OnCameraShake?.Invoke();
+        OnCameraShake?.Invoke(positionStrength,rotationalStrength);
     }
 
     private void OnEnable() => OnCameraShake += CameraShake;
     private void OnDisable() => OnCameraShake -= CameraShake;
 
-    private void CameraShake()
+    private void CameraShake(Vector3 positionStrength, Vector3 rotationalStrength)
     {
         Debug.Log("Hi squidward");
         cameraTransform.DOComplete();

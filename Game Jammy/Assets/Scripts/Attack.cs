@@ -11,7 +11,7 @@ public abstract class Attack : MonoBehaviour
     public int _attackDamage = 10;
 
 
-    private float _currentAttackCooldown;
+    protected float _currentAttackCooldown;
 
 
     private void Start()

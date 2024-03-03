@@ -41,7 +41,7 @@ public class Building : MonoBehaviour, IDamageable
         state = Damaged.Damaged;
         if (damage > 10)
         {
-            CameraShaker.Invoke();
+            CameraShaker.Invoke(new Vector3(2,2,2), new Vector3(2,2,2));
         }
         
         if (_currentHealth <= 0)
