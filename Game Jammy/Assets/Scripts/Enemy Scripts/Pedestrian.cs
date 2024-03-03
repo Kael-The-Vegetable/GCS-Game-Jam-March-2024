@@ -79,6 +79,7 @@ public class Pedestrian : Actor
         if (agent.velocity.magnitude < 0.5f)
         { _isAtDestination = true; }
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
