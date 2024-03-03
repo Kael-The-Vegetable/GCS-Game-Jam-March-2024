@@ -9,7 +9,6 @@ public abstract class Attack : MonoBehaviour
     public float _attackCooldown;
     private List<Collider> _hitList = new List<Collider>();
     public int _attackDamage = 10;
-    public float _attackSeconds;
 
     private bool _enabled;
     private float _currentAttackCooldown;
@@ -28,7 +27,11 @@ public abstract class Attack : MonoBehaviour
             _currentAttackCooldown -= Time.deltaTime;
             _currentAttackCooldown = Mathf.Clamp(_currentAttackCooldown, 0, _currentAttackCooldown);
         }
-        if (_enabled)
+    }
+
+    public virtual void OnAttack()
+    {
+        if (_currentAttackCooldown == 0)
         {
             Collider[] hits = Physics.OverlapBox(_hitBox.transform.position, _hitBox.size / 2, _hitBox.transform.rotation);
 
@@ -44,28 +47,7 @@ public abstract class Attack : MonoBehaviour
                         damageable.TakeDamage(_attackDamage);
                     }
                 }
-
             }
-        }
-    }
-
-
-
-    private IEnumerator ActivateHitBox()
-    {
-        _currentAttackCooldown = _attackCooldown;
-        _enabled = true;
-        yield return new WaitForSeconds(_attackSeconds);
-
-        _enabled = false;
-        _hitList = new List<Collider>();
-    }
-
-    public virtual void OnAttack()
-    {
-        if (_currentAttackCooldown == 0)
-        {
-            StartCoroutine(ActivateHitBox());
         }
     }
 }
