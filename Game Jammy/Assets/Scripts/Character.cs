@@ -96,6 +96,7 @@ public class Character : MonoBehaviour, IDamageable
                 else if (Input.GetButtonDown("Punch"))
                 {
                     punch.OnAttack();
+                    currentState = CharacterStates.Punching;
                 }
             }
             else
@@ -115,6 +116,7 @@ public class Character : MonoBehaviour, IDamageable
                     break;
                 case CharacterStates.Punching:
                     animator.SetBool("Walking", false);
+                    animator.SetBool("Punch", true);
                     break;
                 case CharacterStates.Idle:
                     animator.SetBool("Walking", false);
