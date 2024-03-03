@@ -71,6 +71,8 @@ public class Pedestrian : Actor
                     isAlive = false;
                     agent.enabled = false;
                     transform.position += new Vector3(0, -0.4f, 0);
+                    GameHUD hud = transform.parent.GetComponent<NavMeshEnemySpawner>().gameHUD;
+                    hud.civiliansAlive--;
                     StartCoroutine(Death(4));
                 }
                 
@@ -98,9 +100,7 @@ public class Pedestrian : Actor
             transform.localScale *= 0.9f;
             yield return new WaitForSeconds(timeRemaining / 50);
             if (transform.localScale.x < 1)
-            {
-                Destroy(gameObject);
-            }
+            { Destroy(gameObject); }
         } while (true);
     }
     private void OnDrawGizmos()

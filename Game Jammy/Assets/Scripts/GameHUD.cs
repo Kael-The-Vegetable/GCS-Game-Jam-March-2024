@@ -17,12 +17,16 @@ public class GameHUD : MonoBehaviour
     private TextMeshProUGUI _message;
     private Image _menuOverlay;
     private GameObject _button;
+    private TextMeshProUGUI _score;
+    public int civiliansAlive;
+
     void Awake()
     {
         state = GameState.MainMenu;
         _message = GameObject.Find("Message").GetComponent<TextMeshProUGUI>();
         _menuOverlay = GameObject.Find("MenuOverlay").GetComponent<Image>();
         _button = GameObject.Find("Button");
+        _score = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
     
@@ -33,14 +37,17 @@ public class GameHUD : MonoBehaviour
             case GameState.MainMenu:
                 _message.text = "<size=60>Is it Big WEEVIL?</size>\n<size=20>or smol ppl?</size>";
                 _menuOverlay.enabled = true;
+                _score.enabled = false;
                 break;
             case GameState.Initialize:
                 _message.enabled = false;
                 _menuOverlay.enabled = false;
                 _button.SetActive(false);
+                _score.enabled = true;
                 state = GameState.Playing;
                 break;
             case GameState.Playing:
+                _score.text = $"Victims To KILL: {civiliansAlive}";
                 break;
             case GameState.GameOver:
 
