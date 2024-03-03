@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.SymbolStore;
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class Character : MonoBehaviour, IDamageable
 {
