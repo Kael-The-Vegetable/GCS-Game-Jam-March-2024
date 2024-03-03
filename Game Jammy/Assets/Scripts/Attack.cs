@@ -37,22 +37,7 @@ public abstract class Attack : MonoBehaviour
 
     public void AttackFrame()
     {
-        Collider[] hits = Physics.OverlapBox(_hitBox.transform.position, _hitBox.size / 2, _hitBox.transform.rotation);
-
-        for (int i = 0; i < hits.Length; i++)
-        {
-            if (_hitList.Contains(hits[i]) == false)
-            {
-                IDamageable damageable = hits[i].GetComponent<IDamageable>();
-
-                if (damageable != null)
-                {
-                    _hitList.Add(hits[i]);
-                    damageable.TakeDamage(_attackDamage);
-                }
-            }
-        }
-        _currentAttackCooldown = attackCooldown;
+        
     }
 
 
@@ -60,7 +45,22 @@ public abstract class Attack : MonoBehaviour
     {
         if (_currentAttackCooldown == 0)
         {
-            
+            Collider[] hits = Physics.OverlapBox(_hitBox.transform.position, _hitBox.size / 2, _hitBox.transform.rotation);
+
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (_hitList.Contains(hits[i]) == false)
+                {
+                    IDamageable damageable = hits[i].GetComponent<IDamageable>();
+
+                    if (damageable != null)
+                    {
+                        _hitList.Add(hits[i]);
+                        damageable.TakeDamage(_attackDamage);
+                    }
+                }
+            }
+            _currentAttackCooldown = attackCooldown;
         }
     }
 }
