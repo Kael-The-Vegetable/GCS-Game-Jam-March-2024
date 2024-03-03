@@ -223,6 +223,7 @@ MonoBehaviour:
   maxHealth: 60
   damageSound: {fileID: 0}
   destroyedMesh: {fileID: 7877815970001187506, guid: 669dda797b0ab644ba101111838f0e6e, type: 3}
+  destroyedMaterial: {fileID: 2100000, guid: 7b988e5d0b846d242be9d1249d8adcf4, type: 2}
   state: 0
   size: 0
 --- !u!208 &4855333205899231044
