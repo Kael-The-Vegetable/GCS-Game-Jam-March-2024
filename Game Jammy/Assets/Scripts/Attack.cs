@@ -46,6 +46,7 @@ public abstract class Attack : MonoBehaviour
                     }
                 }
             }
+            _currentAttackCooldown = attackCooldown;
         }
     }
 }
