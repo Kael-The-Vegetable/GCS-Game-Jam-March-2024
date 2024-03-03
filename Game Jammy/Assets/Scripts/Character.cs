@@ -82,6 +82,10 @@ public class Character : MonoBehaviour, IDamageable
     void Update()
     {
         _isGrounded = Physics.Raycast(_groundCheck.position, Vector2.down, 0.3f, groundmask);
+        if (!WorldManager.Global.isPlaying)
+        { _alive = false; }
+        else 
+        { _alive = true; }
         if (_alive) // if alive then you can do all this.
         {
             currentState = CharacterStates.Idle;
