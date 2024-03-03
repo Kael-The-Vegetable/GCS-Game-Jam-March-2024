@@ -17,7 +17,14 @@ public class Building : MonoBehaviour, IDamageable
         Damaged,
         Destroyed
     }
+    public enum SizeCategory
+    {
+        Small,
+        Medium,
+        Large
+    }
     public Damaged state;
+    public SizeCategory size;
     void Start()
     {
         damageSound = GetComponent<AudioSource>();
@@ -59,7 +66,17 @@ public class Building : MonoBehaviour, IDamageable
             {
                 state = Damaged.Destroyed;
                 _filter.mesh = destroyedMesh;
-                transform.position = transform.position - new Vector3(0.5f, 6, 0.5f); // realign new position
+                switch (size)
+                {
+                    case SizeCategory.Small:
+                        break;
+                    case SizeCategory.Medium:
+                        break;
+                    case SizeCategory.Large:
+                        transform.position = transform.position - new Vector3(0.5f, 6, 0.5f); // realign new position
+                        break;
+                }
+                
             }
         }
     }
