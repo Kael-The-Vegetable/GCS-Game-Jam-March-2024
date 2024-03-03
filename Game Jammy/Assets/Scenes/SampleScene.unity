@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitBox: {fileID: 878133032}
-  attackCooldown: 3
+  attackCooldown: 1
   canAttack: 0
   _attackDamage: 10
   character: {fileID: 599750076}
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitBox: {fileID: 514696731}
-  attackCooldown: 3
+  attackCooldown: 1.5
   canAttack: 0
   _attackDamage: 40
   character: {fileID: 599750076}
