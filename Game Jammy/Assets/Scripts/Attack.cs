@@ -45,7 +45,7 @@ public abstract class Attack : MonoBehaviour
     {
         if (_currentAttackCooldown == 0)
         {
-            Collider[] hits = Physics.OverlapBox(_hitBox.transform.position, _hitBox.size / 2, _hitBox.transform.rotation);
+            Collider[] hits = Physics.OverlapBox(_hitBox.transform.position, _hitBox.size, _hitBox.transform.rotation);
 
             for (int i = 0; i < hits.Length; i++)
             {

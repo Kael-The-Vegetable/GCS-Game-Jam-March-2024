@@ -16,6 +16,7 @@ public class Character : MonoBehaviour, IDamageable
     public LayerMask groundmask;
     public Attack stomp;
     public Attack punch;
+    public Attack walking;
 
     private float _currentCooldown;
     private int _currentHealth;
@@ -90,7 +91,7 @@ public class Character : MonoBehaviour, IDamageable
             switch (_currentState)
             {
                 case CharacterStates.Walking:
-                   
+                    walking.OnAttack();
                     animator.SetBool("Walking", true);
                     break;
                 case CharacterStates.Jumping:
