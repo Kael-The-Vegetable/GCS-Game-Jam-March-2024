@@ -858,6 +858,7 @@ MonoBehaviour:
   damageSound: {fileID: 0}
   destroyedMesh: {fileID: 0}
   state: 0
+  size: 0
 --- !u!82 &529643133
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1309,14 +1310,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3114354, y: 0.3602852, z: -0.12900075, w: 0.86980546}
+  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2032616951}
   m_Father: {fileID: 1799835469}
-  m_LocalEulerAnglesHint: {x: 39.4, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,7 +1331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTransform: {fileID: 599750074}
+  menuTransform: {fileID: 1080694435}
   cameraState: 0
+  offset: {x: 5, y: -7, z: 5}
 --- !u!1 &1036758575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1474,7 @@ MonoBehaviour:
   damageSound: {fileID: 0}
   destroyedMesh: {fileID: 0}
   state: 0
+  size: 0
 --- !u!82 &1036758582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1737,6 +1741,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.168313, y: 3.346438, z: -3.9962616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1080694434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080694435}
+  m_Layer: 0
+  m_Name: IdleCameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1080694435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080694434}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.15, y: 23.34, z: -39.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2450,6 +2485,7 @@ MonoBehaviour:
   damageSound: {fileID: 0}
   destroyedMesh: {fileID: 0}
   state: 0
+  size: 0
 --- !u!82 &1242896532
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3154,7 +3190,7 @@ Transform:
   m_GameObject: {fileID: 1799835467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: 20, z: -16}
+  m_LocalPosition: {x: -13.34, y: 20, z: -53.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3365,3 +3401,4 @@ SceneRoots:
   - {fileID: 1800130523}
   - {fileID: 1799835469}
   - {fileID: 1124392191}
+  - {fileID: 1080694435}

@@ -46,6 +46,7 @@ public class GameHUD : MonoBehaviour
                 _menuOverlay.enabled = false;
                 _button.SetActive(false);
                 _score.enabled = true;
+                Camera.main.GetComponent<CameraController>().cameraState = CameraController.CameraStates.Following;
                 state = GameState.Playing;
                 break;
             case GameState.Playing:
