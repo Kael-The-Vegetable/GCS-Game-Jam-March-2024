@@ -55,6 +55,9 @@ public abstract class Attack : MonoBehaviour
                     damageable.TakeDamage(_attackDamage);
                 }
             }
+
+           
+
             _currentAttackCooldown = attackCooldown;
         }
     }
