@@ -163,6 +163,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &227013377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -244,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 227013375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -357,6 +358,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &417217207
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -438,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 417217205}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -682,6 +684,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &564854010
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -763,7 +766,7 @@ Transform:
   m_GameObject: {fileID: 564854008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -933,6 +936,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &618156232
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1014,7 +1018,7 @@ Transform:
   m_GameObject: {fileID: 618156230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,6 +1212,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &753128150
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1289,7 +1294,7 @@ Transform:
   m_GameObject: {fileID: 753128148}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1358,6 +1363,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &809150749
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1439,7 +1445,7 @@ Transform:
   m_GameObject: {fileID: 809150747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1895,6 +1901,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1121825903
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1976,7 +1983,7 @@ Transform:
   m_GameObject: {fileID: 1121825901}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2045,6 +2052,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1134772062
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2126,7 +2134,7 @@ Transform:
   m_GameObject: {fileID: 1134772060}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2195,6 +2203,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1231375679
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2276,7 +2285,7 @@ Transform:
   m_GameObject: {fileID: 1231375677}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2467,6 +2476,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1270144149
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2548,7 +2558,7 @@ Transform:
   m_GameObject: {fileID: 1270144147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2617,6 +2627,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1508531028
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2698,7 +2709,7 @@ Transform:
   m_GameObject: {fileID: 1508531026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2849,6 +2860,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1684371286
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2930,7 +2942,7 @@ Transform:
   m_GameObject: {fileID: 1684371284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2999,6 +3011,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1808288992
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3080,7 +3093,7 @@ Transform:
   m_GameObject: {fileID: 1808288990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3149,6 +3162,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1860520044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3230,7 +3244,7 @@ Transform:
   m_GameObject: {fileID: 1860520042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3339,7 +3353,7 @@ Transform:
   m_GameObject: {fileID: 1861166405}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3364,6 +3378,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1861166413
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3449,6 +3464,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
+  scaredDistance: 4
 --- !u!195 &1880796618
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3530,7 +3546,7 @@ Transform:
   m_GameObject: {fileID: 1880796616}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 9, y: 1.105, z: 10}
+  m_LocalPosition: {x: 9, y: 0.85, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []

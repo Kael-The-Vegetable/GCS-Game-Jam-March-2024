@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEditor.AI;
-using UnityEngine.AI;
 
 public class Pedestrian : Actor
 {
@@ -13,6 +12,7 @@ public class Pedestrian : Actor
 
     private Vector3 _randomWalkTowards;
     private bool _isAtDestination;
+    public float scaredDistance;
 
     public override void Start()
     {
@@ -24,6 +24,13 @@ public class Pedestrian : Actor
     }
     void Update()
     {
+        if (
+            Vector3.Distance(transform.position, WorldManager.Global.PlayerPos) < scaredDistance 
+            && state != ActorState.Panic)
+        { 
+            state = ActorState.Panic;
+            _isAtDestination = true;
+        }
         switch (state)
         {
             case ActorState.Idle: 
@@ -38,19 +45,30 @@ public class Pedestrian : Actor
                     } while (Vector3.Distance(transform.position, _randomWalkTowards) < minDistance);
                     _isAtDestination = false;
                     agent.SetDestination(_randomWalkTowards);
-                    StartCoroutine(CheckIfStuck(1));
                 }
                 if (Vector3.Distance(transform.position, _randomWalkTowards) < 1f)
                 { _isAtDestination = true; }
-                
-                break;
+                if (agent.velocity.magnitude < 1)
+                { StartCoroutine(CheckIfStuck(1)); }
+                    break;
             case ActorState.Falling:
                 break;
-            case ActorState.Panic: 
-
+            case ActorState.Panic:
+                float panicSpeed = speed * 1.5f;
+                agent.speed = panicSpeed;
+                if (_isAtDestination)
+                {
+                    do
+                    {
+                        RandomPoint(transform.position, boundingBoxSize, out _randomWalkTowards);
+                    } while (Vector3.Angle(WorldManager.Global.PlayerPos, _randomWalkTowards) < 30);
+                    _isAtDestination = false;
+                }
+                if (Vector3.Distance(transform.position, _randomWalkTowards) < 1f)
+                { _isAtDestination = true; }
+                agent.SetDestination(_randomWalkTowards);
                 break;
             case ActorState.Attack: 
-
                 break;
             case ActorState.Dead:
                 agent.SetDestination(transform.position);
@@ -70,5 +88,7 @@ public class Pedestrian : Actor
         Gizmos.DrawWireCube(BoundingBoxPos, boundingBoxSize * 2);
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, scaredDistance);
     }
 }

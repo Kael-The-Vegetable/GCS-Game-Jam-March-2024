@@ -26,15 +26,6 @@ public class Actor : MonoBehaviour, IDamageable
         float gravity = WorldManager.Global.Gravity;
         _currentHealth = maxHealth;
     }
-
-    //public void Move(Vector3 targetDestination)
-    //{
-    //    Vector3 distanceToTravel = targetDestination - transform.position;
-    //    Vector3 direction = distanceToTravel.normalized;
-    //    Quaternion rotation = Quaternion.LookRotation(direction);
-    //    transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
-    //    controller.Move(direction * speed * Time.deltaTime);
-    //}
     public bool RandomPoint(Vector3 center, Vector3 size, out Vector3 result)
     {
         for (int i = 0; i < 30; i++)
