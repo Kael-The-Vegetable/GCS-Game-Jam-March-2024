@@ -61,11 +61,14 @@ public class Pedestrian : Actor
                     do
                     {
                         RandomPoint(transform.position, boundingBoxSize, out _randomWalkTowards);
-                    } while (Vector3.Angle(WorldManager.Global.PlayerPos, _randomWalkTowards) < 30);
+                    } while (Vector3.Angle(-(transform.position - WorldManager.Global.PlayerPos), _randomWalkTowards) < 0.1f);
                     _isAtDestination = false;
                 }
                 if (Vector3.Distance(transform.position, _randomWalkTowards) < 1f)
-                { _isAtDestination = true; }
+                { 
+                    _isAtDestination = true;
+                    state = ActorState.Walking;
+                }
                 agent.SetDestination(_randomWalkTowards);
                 break;
             case ActorState.Attack: 

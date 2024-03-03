@@ -163,7 +163,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &227013377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &417217207
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &564854010
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &618156232
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &753128150
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &809150749
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1121825903
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2052,7 +2052,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1134772062
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2203,7 +2203,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1231375679
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2476,7 +2476,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1270144149
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2627,7 +2627,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1508531028
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1684371286
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3011,7 +3011,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1808288992
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3162,7 +3162,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1860520044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3378,7 +3378,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1861166413
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
-  scaredDistance: 4
+  scaredDistance: 6
 --- !u!195 &1880796618
 NavMeshAgent:
   m_ObjectHideFlags: 0
