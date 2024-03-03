@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class Character : MonoBehaviour, IDamageable
 {
@@ -17,22 +19,23 @@ public class Character : MonoBehaviour, IDamageable
     public Attack stomp;
     public Attack punch;
     public Attack walking;
+    public bool attacking = false;
+    public CharacterStates currentState;
 
     private float _currentCooldown;
     private int _currentHealth;
     private bool _isGrounded = false;
     private bool _canJump = false;
     private bool _alive;
-    private bool _attacking = false;
+    
 
-    private CharacterStates _currentState;
-    private enum CharacterStates
+   
+    public enum CharacterStates
     {
         Idle,
         Walking,
         Stomping,
-        Punching,
-        Jumping
+        Punching
     }
     
     private Vector3 _moveDirection;
@@ -50,7 +53,7 @@ public class Character : MonoBehaviour, IDamageable
         if (_moveDirection != Vector3.zero)
         { 
             _lookDirection = _moveDirection;
-            _currentState = CharacterStates.Walking;
+            currentState = CharacterStates.Walking;
         }
 
         Quaternion rotation = Quaternion.LookRotation(_lookDirection);
@@ -81,45 +84,45 @@ public class Character : MonoBehaviour, IDamageable
         _isGrounded = Physics.Raycast(_groundCheck.position, Vector2.down, 0.3f, groundmask);
         if (_alive) // if alive then you can do all this.
         {
-            _currentState = CharacterStates.Idle;
-            if (_attacking == false)
+            currentState = CharacterStates.Idle;
+            if (attacking == false)
             {
                 HandleMovement();
+                if (Input.GetButtonDown("Stomp"))
+                {
+                    stomp.OnAttack();
+                    currentState = CharacterStates.Stomping;
+                }
+                else if (Input.GetButtonDown("Punch"))
+                {
+                    punch.OnAttack();
+                }
+            }
+            else
+            {
+                _velocity = Vector3.zero;
             }
 
-            switch (_currentState)
+            switch (currentState)
             {
                 case CharacterStates.Walking:
                     walking.OnAttack();
                     animator.SetBool("Walking", true);
                     break;
-                case CharacterStates.Jumping:
-                    break;
                 case CharacterStates.Stomping:
+                    animator.SetBool("Walking", false);
+                    animator.SetBool("Stomp", true);
                     break;
                 case CharacterStates.Punching:
+                    animator.SetBool("Walking", false);
                     break;
                 case CharacterStates.Idle:
                     animator.SetBool("Walking", false);
                     break;
             }
 
-
             // if the character is grounded and the cooldown is 0, then the character can jump
-            _canJump = _isGrounded && _currentCooldown == 0;
-           
-            
-
-            if (Input.GetButtonDown("Stomp"))
-            {
-                stomp.OnAttack();
-            }
-            if (Input.GetButtonDown("Punch"))
-            {
-                punch.OnAttack();
-            }
-
-           
+            _canJump = _isGrounded && _currentCooldown == 0;           
 
             if (_currentHealth <= 0)
             {

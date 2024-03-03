@@ -49,12 +49,10 @@ public abstract class Attack : MonoBehaviour
             for (int i = 0; i < hits.Length; i++)
             {
                 IDamageable damageable = hits[i].GetComponent<IDamageable>();
-                if (!hits[i].CompareTag(transform.tag))
+
+                if (damageable != null && hits[i].gameObject != gameObject)
                 {
-                    if (damageable != null)
-                    {
-                        damageable.TakeDamage(_attackDamage);
-                    }
+                    damageable.TakeDamage(_attackDamage);
                 }
             }
             _currentAttackCooldown = attackCooldown;
