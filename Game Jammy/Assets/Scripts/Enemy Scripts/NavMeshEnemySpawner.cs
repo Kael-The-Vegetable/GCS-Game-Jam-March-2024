@@ -8,8 +8,10 @@ public class NavMeshEnemySpawner : MonoBehaviour
     public GameObject prefab;
     public int numberOfPrefabs;
     public float boundingRadius;
+    private GameHUD _gameHUD;
     void Start()
     {
+        _gameHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<GameHUD>();
         #region Spawning
         int spawns = 0;
         do
