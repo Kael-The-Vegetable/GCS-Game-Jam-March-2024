@@ -161,7 +161,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 227013377}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &227013377
 NavMeshAgent:
@@ -355,7 +355,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 417217207}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &417217207
 NavMeshAgent:
@@ -584,7 +584,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.93, y: 0.61, z: 15.36}
-  m_LocalScale: {x: 5, y: 8.4356, z: 5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -627,7 +627,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 564854010}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &564854010
 NavMeshAgent:
@@ -875,7 +875,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 618156232}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &618156232
 NavMeshAgent:
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 753128150}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &753128150
 NavMeshAgent:
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 809150749}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &809150749
 NavMeshAgent:
@@ -1673,7 +1673,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.18, y: 0.61, z: 15.27}
-  m_LocalScale: {x: 5, y: 8.4356, z: 5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1121825903}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1121825903
 NavMeshAgent:
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1134772062}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1134772062
 NavMeshAgent:
@@ -2137,7 +2137,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1231375679}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1231375679
 NavMeshAgent:
@@ -2366,7 +2366,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.87, y: 0.61, z: 8.46}
-  m_LocalScale: {x: 5, y: 8.4356, z: 5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2409,7 +2409,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1270144149}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1270144149
 NavMeshAgent:
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1508531028}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1508531028
 NavMeshAgent:
@@ -2791,7 +2791,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1684371286}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1684371286
 NavMeshAgent:
@@ -2941,7 +2941,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1808288992}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1808288992
 NavMeshAgent:
@@ -3091,7 +3091,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1860520044}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1860520044
 NavMeshAgent:
@@ -3306,7 +3306,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1861166413}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1861166413
 NavMeshAgent:
@@ -3391,7 +3391,7 @@ MonoBehaviour:
   rotateSpeed: 360
   agent: {fileID: 1880796618}
   state: 1
-  boundingBoxSize: {x: 10, y: 10, z: 10}
+  boundingBoxSize: {x: 10, y: 3, z: 10}
   minDistance: 1
 --- !u!195 &1880796618
 NavMeshAgent:
