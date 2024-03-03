@@ -41,7 +41,7 @@ public class Actor : MonoBehaviour, IDamageable
     }
     public void TakeDamage(int damage)
     {
-        Debug.Log("TOOK DAMAGE");
+        Debug.Log($"TOOK DAMAGE OF :{damage}");
         _currentHealth -= damage;
         if (_currentHealth <= 0)
         { state = ActorState.Dead; }
