@@ -3318,7 +3318,7 @@ MonoBehaviour:
   playMusic: {fileID: 8300000, guid: 3884b3854a1b3f84da28c7752658b2e6, type: 3}
   playMusicSource: {fileID: 1056275326}
   civiliansAlive: 0
-  timeRemaining: 60
+  timeRemaining: 120
 --- !u!1001 &2040849367
 PrefabInstance:
   m_ObjectHideFlags: 0
