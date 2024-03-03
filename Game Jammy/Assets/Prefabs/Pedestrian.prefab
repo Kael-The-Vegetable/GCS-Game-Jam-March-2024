@@ -150,4 +150,4 @@ MonoBehaviour:
   state: 1
   boundingBoxSize: {x: 10, y: 1, z: 10}
   minDistance: 1
-  scaredDistance: 6
+  scaredDistance: 8
