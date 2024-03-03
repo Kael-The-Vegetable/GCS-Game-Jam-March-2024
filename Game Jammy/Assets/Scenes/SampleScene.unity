@@ -776,7 +776,8 @@ MonoBehaviour:
   controller: {fileID: 599750075}
   speed: 10
   maxHealth: 100
-  jumpCooldown: 0
+  stompCooldown: 0
+  walkingParticles: {fileID: 0}
 --- !u!1 &618156230
 GameObject:
   m_ObjectHideFlags: 0
