@@ -652,6 +652,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5929806fd95db004e95f90747a677ce9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1121680818}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5929806fd95db004e95f90747a677ce9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1121680819}
   m_SourcePrefab: {fileID: 100100000, guid: 5929806fd95db004e95f90747a677ce9, type: 3}
 --- !u!1 &514696729
 GameObject:
@@ -1597,6 +1600,23 @@ MonoBehaviour:
   canAttack: 0
   _attackDamage: 10
   character: {fileID: 599750076}
+--- !u!114 &1121680819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121680815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c76d3f8544d35c4fa4ba48f1837cc67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitBox: {fileID: 0}
+  attackCooldown: 0
+  canAttack: 0
+  _attackDamage: 10
+  character: {fileID: 0}
 --- !u!1 &1172049354
 GameObject:
   m_ObjectHideFlags: 0
