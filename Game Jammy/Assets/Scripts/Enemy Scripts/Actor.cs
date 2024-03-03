@@ -5,6 +5,7 @@ public class Actor : MonoBehaviour, IDamageable
 {
     public int maxHealth;
     private int _currentHealth;
+    internal bool isAlive;
     public int speed;
     public float rotateSpeed;
     public NavMeshAgent agent;
@@ -21,8 +22,8 @@ public class Actor : MonoBehaviour, IDamageable
 
     public virtual void Start()
     {
-        float gravity = WorldManager.Global.Gravity;
         _currentHealth = maxHealth;
+        isAlive = true;
     }
     public bool RandomPoint(Vector3 center, Vector3 size, out Vector3 result)
     {
@@ -41,7 +42,6 @@ public class Actor : MonoBehaviour, IDamageable
     }
     public void TakeDamage(int damage)
     {
-        Debug.Log($"TOOK DAMAGE OF :{damage}");
         _currentHealth -= damage;
         if (_currentHealth <= 0)
         { state = ActorState.Dead; }

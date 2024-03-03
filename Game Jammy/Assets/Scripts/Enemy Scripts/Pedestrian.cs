@@ -24,13 +24,6 @@ public class Pedestrian : Actor
     }
     void Update()
     {
-        if (
-            Vector3.Distance(transform.position, WorldManager.Global.PlayerPos) < scaredDistance 
-            && state != ActorState.Panic)
-        { 
-            state = ActorState.Panic;
-            _isAtDestination = true;
-        }
         switch (state)
         {
             case ActorState.Idle: 
@@ -68,9 +61,26 @@ public class Pedestrian : Actor
             case ActorState.Attack: 
                 break;
             case ActorState.Dead:
-                agent.SetDestination(transform.position);
-                transform.localScale = new Vector3(18, 1, 18);
+                if (isAlive)
+                {
+                    agent.SetDestination(transform.position);
+                    transform.localScale = new Vector3(
+                        transform.localScale.x * 3,
+                        transform.localScale.y * 0.1f,
+                        transform.localScale.z * 3);
+                    isAlive = false;
+                    agent.enabled = false;
+                    transform.position += new Vector3(0, -0.4f, 0);
+                    StartCoroutine(Death(4));
+                }
+                
                 break;
+        }
+        if (Vector3.Distance(transform.position, WorldManager.Global.PlayerPos) < scaredDistance
+            && state != ActorState.Panic && state != ActorState.Dead)
+        {
+            state = ActorState.Panic;
+            _isAtDestination = true;
         }
     }
     private IEnumerator CheckIfStuck(float timeDelay)
@@ -79,12 +89,25 @@ public class Pedestrian : Actor
         if (agent.velocity.magnitude < 0.5f)
         { _isAtDestination = true; }
     }
-
+    private IEnumerator Death(float length)
+    {
+        yield return new WaitForSeconds(length / 2);
+        float timeRemaining = length / 2;
+        do
+        {
+            transform.localScale *= 0.9f;
+            yield return new WaitForSeconds(timeRemaining / 50);
+            if (transform.localScale.x < 1)
+            {
+                Destroy(gameObject);
+            }
+        } while (true);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(BoundingBoxPos, boundingBoxSize * 2);
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
+        Gizmos.DrawSphere(agent.destination, 0.1f);
     }
 }
