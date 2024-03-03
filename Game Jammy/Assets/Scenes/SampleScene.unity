@@ -934,7 +934,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   stomp: {fileID: 1121680818}
-  punch: {fileID: 0}
+  punch: {fileID: 1121680819}
   walking: {fileID: 599750078}
   attacking: 0
   currentState: 0
@@ -1612,11 +1612,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c76d3f8544d35c4fa4ba48f1837cc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitBox: {fileID: 0}
+  _hitBox: {fileID: 514696731}
   attackCooldown: 0
   canAttack: 0
-  _attackDamage: 10
-  character: {fileID: 0}
+  _attackDamage: 40
+  character: {fileID: 599750076}
 --- !u!1 &1172049354
 GameObject:
   m_ObjectHideFlags: 0

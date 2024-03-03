@@ -21,7 +21,7 @@ public class Punch : Attack
     public void FinishedAnimationPunch()
     {
         character.attacking = false;
-        character.animator.SetBool("Stomp", false);
+        character.animator.SetBool("Punch", false);
         character.currentState = CharacterStates.Idle;
     }
 }

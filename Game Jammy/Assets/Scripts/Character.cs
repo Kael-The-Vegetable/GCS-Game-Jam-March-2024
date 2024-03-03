@@ -17,7 +17,7 @@ public class Character : MonoBehaviour, IDamageable
     public Transform _groundCheck;
     public LayerMask groundmask;
     public Attack stomp;
-    public Attack punch;
+    public Punch punch;
     public Attack walking;
     public bool attacking = false;
     public CharacterStates currentState;
@@ -58,9 +58,6 @@ public class Character : MonoBehaviour, IDamageable
 
         Quaternion rotation = Quaternion.LookRotation(_lookDirection);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
-        
-
-       
 
         if (!_isGrounded)
         {
@@ -135,13 +132,6 @@ public class Character : MonoBehaviour, IDamageable
                 _alive = false;
             }
         }
-
-        
-
-
-        
-
-
 
         controller.Move(_velocity);
         _lastVelocity = _velocity;
