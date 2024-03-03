@@ -17,7 +17,6 @@ public class GameHUD : MonoBehaviour
     private TextMeshProUGUI _message;
     private Image _menuOverlay;
     private GameObject _button;
-    private TextMeshProUGUI _buttonText;
     void Awake()
     {
         state = GameState.MainMenu;
