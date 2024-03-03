@@ -140,6 +140,7 @@ MonoBehaviour:
   damageSound: {fileID: 0}
   destroyedMesh: {fileID: 6722103232541235716, guid: 2cc68805be9bc894fb0f03f264c2e511, type: 3}
   state: 0
+  size: 2
 --- !u!82 &6284858276039505703
 AudioSource:
   m_ObjectHideFlags: 0
