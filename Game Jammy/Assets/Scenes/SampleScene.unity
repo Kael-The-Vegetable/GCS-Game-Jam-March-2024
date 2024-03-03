@@ -3186,6 +3186,7 @@ MonoBehaviour:
   controller: {fileID: 599750075}
   animator: {fileID: 1867846952}
   speed: 10
+  rotateSpeed: 4
   maxHealth: 100
   stompCooldown: 3
   _groundCheck: {fileID: 676497277}

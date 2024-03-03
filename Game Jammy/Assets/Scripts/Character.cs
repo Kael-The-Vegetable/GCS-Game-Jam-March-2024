@@ -9,6 +9,7 @@ public class Character : MonoBehaviour, IDamageable
     public CharacterController controller;
     public Animator animator;
     public float speed;
+    public float rotateSpeed;
     public int maxHealth;
     public float stompCooldown;
     public Transform _groundCheck;
@@ -34,6 +35,7 @@ public class Character : MonoBehaviour, IDamageable
     }
     
     private Vector3 _moveDirection;
+    private Vector3 _lookDirection;
     private Vector3 _velocity;
     private Vector3 _lastVelocity;
     private Vector3 _downwardVel;
@@ -43,7 +45,11 @@ public class Character : MonoBehaviour, IDamageable
         _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
         _moveDirection = IsoNormalize(_moveDirection);
         _velocity = _moveDirection * speed * Time.deltaTime;
-        transform.LookAt(transform.position + _moveDirection);
+
+        if (_moveDirection != Vector3.zero)
+        { _lookDirection = _moveDirection; }
+        Quaternion rotation = Quaternion.LookRotation(_lookDirection);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
 
         _currentState = CharacterStates.Walking;
 
