@@ -57,7 +57,7 @@ public class GameHUD : MonoBehaviour
         switch(state)
         {
             case GameState.MainMenu:
-                _message.text = "<size=60>Is it big WEEVIL?</size>\n<size=30>or tiny people?</size>";
+                _message.text = "<size=60>Is It Big WEEVIL?</size>\n<size=30>Or Tiny People?</size>";
                 _menuOverlay.enabled = true;
                 _score.enabled = false;
                 _instruction.SetActive(false);
@@ -81,6 +81,16 @@ public class GameHUD : MonoBehaviour
                 {
                     Color tempColour = _actionImages[i+1].color;
                     tempColour.a = Mathf.Abs(_action[i].currentAttackCooldown / _action[i].attackCooldown - 1);
+                    if (tempColour.a == 1) 
+                    { 
+                        tempColour.r = 0.5f;
+                        tempColour.b = 0.5f;
+                    }
+                    else 
+                    {
+                        tempColour.r = 1f;
+                        tempColour.b = 1f;
+                    }
                     _actionImages[i+1].color = tempColour;
                 }
 
