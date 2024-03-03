@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 341375467}
   - component: {fileID: 341375466}
   - component: {fileID: 341375465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3208,7 +3208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitBox: {fileID: 878133032}
-  _attackCooldown: 3
+  attackCooldown: 0
   _attackDamage: 10
 --- !u!1 &618156230
 GameObject:
