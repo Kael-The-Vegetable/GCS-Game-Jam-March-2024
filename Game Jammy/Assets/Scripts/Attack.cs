@@ -9,14 +9,12 @@ public abstract class Attack : MonoBehaviour
     public float _attackCooldown;
     private List<Collider> _hitList = new List<Collider>();
     public int _attackDamage = 10;
-
-    private bool _enabled;
     private float _currentAttackCooldown;
 
 
     private void Start()
     {
-        _enabled = false;
+
     }
 
 
