@@ -45,7 +45,6 @@ public class Character : MonoBehaviour, IDamageable
                 Stomp();
             }
 
-            Debug.Log(_isGrounded);
             _moveDirection = IsoNormalize(_moveDirection);
            
 
