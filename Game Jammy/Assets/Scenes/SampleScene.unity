@@ -655,6 +655,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5929806fd95db004e95f90747a677ce9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1121680819}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5929806fd95db004e95f90747a677ce9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1121680820}
   m_SourcePrefab: {fileID: 100100000, guid: 5929806fd95db004e95f90747a677ce9, type: 3}
 --- !u!1 &514696729
 GameObject:
@@ -857,7 +860,6 @@ GameObject:
   - component: {fileID: 599750074}
   - component: {fileID: 599750076}
   - component: {fileID: 599750075}
-  - component: {fileID: 599750078}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -935,25 +937,9 @@ MonoBehaviour:
     m_Bits: 64
   stomp: {fileID: 1121680818}
   punch: {fileID: 1121680819}
-  walking: {fileID: 599750078}
+  walking: {fileID: 1121680820}
   attacking: 0
   currentState: 0
---- !u!114 &599750078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599750073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811fc47c20648494abb227ad44057a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitBox: {fileID: 273330604}
-  attackCooldown: 0.2
-  canAttack: 0
-  _attackDamage: 1
 --- !u!1 &676497276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1603,22 @@ MonoBehaviour:
   canAttack: 0
   _attackDamage: 40
   character: {fileID: 599750076}
+--- !u!114 &1121680820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121680815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811fc47c20648494abb227ad44057a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitBox: {fileID: 273330604}
+  attackCooldown: 0.2
+  canAttack: 0
+  _attackDamage: 1
 --- !u!1 &1172049354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,8 +2296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 963194228}
-  positionStrength: {x: 1, y: 1, z: 1}
-  rotationalStrength: {x: 1, y: 1, z: 1}
 --- !u!4 &1799835469
 Transform:
   m_ObjectHideFlags: 0

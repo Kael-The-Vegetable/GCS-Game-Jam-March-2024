@@ -16,7 +16,7 @@ public class Stomp : Attack
 
     public void DealDamage()
     {
-        CameraShaker.Invoke(new Vector3(0.5f, 0.5f, 0.5f), new Vector3(0.5f, 0.5f, 0.5f));
+        CameraShaker.Invoke(new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f));
         base.OnAttack();
     }
 

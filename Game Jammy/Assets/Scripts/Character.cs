@@ -18,7 +18,7 @@ public class Character : MonoBehaviour, IDamageable
     public LayerMask groundmask;
     public Attack stomp;
     public Punch punch;
-    public Attack walking;
+    public WalkingAttack walking;
     public bool attacking = false;
     public CharacterStates currentState;
 
