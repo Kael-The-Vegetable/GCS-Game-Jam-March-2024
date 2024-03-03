@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  dust: {fileID: 6417214787219512690, guid: 7c4ef5c557f8d1145b08808c1886184c, type: 3}
   damageSound: {fileID: 0}
   destroyedMesh: {fileID: 7877815970001187506, guid: 669dda797b0ab644ba101111838f0e6e, type: 3}
   destroyedMaterial: {fileID: 2100000, guid: 7b988e5d0b846d242be9d1249d8adcf4, type: 2}

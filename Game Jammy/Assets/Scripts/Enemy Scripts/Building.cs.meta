@@ -3,7 +3,11 @@ guid: 6c0107f007481cc4882557374eb09a0f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dust: {fileID: 6417214787219512690, guid: 7c4ef5c557f8d1145b08808c1886184c, type: 3}
+  - damageSound: {instanceID: 0}
+  - destroyedMesh: {instanceID: 0}
+  - destroyedMaterial: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -8,6 +8,7 @@ public class Building : MonoBehaviour, IDamageable
 {
     public int maxHealth;
     private int _currentHealth;
+    public GameObject dust;
     public AudioSource damageSound;
     public Mesh destroyedMesh;
     public Material destroyedMaterial;
@@ -69,6 +70,8 @@ public class Building : MonoBehaviour, IDamageable
             {
                 state = Damaged.Destroyed;
                 _filter.mesh = destroyedMesh;
+                GameObject explosionInstance = Instantiate(dust);
+                
                 _renderer.material = destroyedMaterial;
                 switch (size)
                 {
@@ -82,7 +85,7 @@ public class Building : MonoBehaviour, IDamageable
                         transform.position = transform.position - new Vector3(0.4f, 6, 0.4f); // realign new position
                         break;
                 }
-                
+                explosionInstance.transform.position = transform.position;
             }
         }
     }
