@@ -21,6 +21,7 @@ Shader "Unlit/Water"
         Pass
         {
             CGPROGRAM
+            #define SMOOTHSTEP_AA 0.01
             float4 _DepthGradientShallow;
             float4 _DepthGradientDeep;
 
@@ -93,7 +94,7 @@ Shader "Unlit/Water"
                 float foamDepthDifference01 = saturate(depthDifference / _FoamDistance);
                 float surfaceNoiseCutoff = foamDepthDifference01 * _SurfaceNoiseCutoff;
 
-                float surfaceNoise = surfaceNoiseSample > surfaceNoiseCutoff ? 1 : 0;
+                float surfaceNoise = smoothstep(surfaceNoiseCutoff - SMOOTHSTEP_AA, surfaceNoiseCutoff + SMOOTHSTEP_AA, surfaceNoiseSample);
 
 
 

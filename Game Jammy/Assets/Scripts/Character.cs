@@ -20,6 +20,17 @@ public class Character : MonoBehaviour, IDamageable
     private bool _isGrounded = false;
     private bool _canStomp = false;
     private bool _alive;
+
+
+    private enum CharacterStates
+    {
+        Idle,
+        Walking,
+        Stomping,
+        Punching,
+        Jumping
+
+    }
     
     private Vector3 _moveDirection;
     private Vector3 _velocity;
