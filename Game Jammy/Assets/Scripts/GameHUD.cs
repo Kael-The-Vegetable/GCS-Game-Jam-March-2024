@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameHUD : MonoBehaviour
@@ -84,9 +85,10 @@ public class GameHUD : MonoBehaviour
             case GameState.InitializeGameOver:
                 playMusicSource.clip = menuMusic;
                 playMusicSource.Play();
+                state = GameState.GameOver;
                 break;
             case GameState.GameOver:
-
+                SceneManager.LoadScene(0);
                 break;
         }
     }
