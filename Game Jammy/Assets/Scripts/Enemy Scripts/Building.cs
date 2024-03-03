@@ -29,6 +29,7 @@ public class Building : MonoBehaviour, IDamageable
             case Damaged.Damaged:
                 break;
             case Damaged.Destroyed:
+                Destroy(gameObject);
                 break;
         }
     }
