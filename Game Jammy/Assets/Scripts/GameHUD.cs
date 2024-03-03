@@ -15,6 +15,9 @@ public class GameHUD : MonoBehaviour
         GameOver
     }
     public GameState state { get; private set; }
+    public AudioClip menuMusic;
+    public AudioClip playMusic;
+    public AudioSource playMusicSource;
     private TextMeshProUGUI _message;
     private Image _menuOverlay;
     private GameObject _button;
@@ -57,6 +60,8 @@ public class GameHUD : MonoBehaviour
                 _score.enabled = true;
                 Camera.main.GetComponent<CameraController>().cameraState = CameraController.CameraStates.Following;
                 _instruction.SetActive(true);
+                playMusicSource.clip = playMusic;
+                playMusicSource.Play();
                 state = GameState.Playing;
                 break;
             case GameState.Playing:
@@ -77,7 +82,8 @@ public class GameHUD : MonoBehaviour
                 }
                 break;
             case GameState.InitializeGameOver:
-
+                playMusicSource.clip = menuMusic;
+                playMusicSource.Play();
                 break;
             case GameState.GameOver:
 
