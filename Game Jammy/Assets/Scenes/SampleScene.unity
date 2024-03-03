@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4611792819845392687, guid: 334ad96e9b7ab524aa514c03792bdfb8, type: 3}
-  numberOfPrefabs: 100
+  numberOfPrefabs: 1024
   boundingRadius: 30
 --- !u!4 &1055236415
 Transform:
