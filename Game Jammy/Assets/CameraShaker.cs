@@ -20,7 +20,6 @@ public class CameraShaker : MonoBehaviour
 
     private void CameraShake(Vector3 positionStrength, Vector3 rotationalStrength)
     {
-        Debug.Log("Hi squidward");
         cameraTransform.DOComplete();
         cameraTransform.DOShakePosition(0.4f,positionStrength);
         cameraTransform.DOShakeRotation(0.4f, rotationalStrength);
