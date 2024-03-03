@@ -7,8 +7,8 @@ using UnityEngine.AI;
 
 public class Pedestrian : Actor
 {
-    public Vector3 boundingBoxPos;
-    public Vector3 boundingBoxSize;
+    public Vector3 BoundingBoxPos { get; private set; }
+    public float boundingBoxRadius;
     public float minDistance;
 
     public NavMeshAgent agent;
@@ -19,6 +19,7 @@ public class Pedestrian : Actor
     public override void Start()
     {
         _isAtDestination = true;
+        BoundingBoxPos = transform.position;
         base.Start();
     }
     void Update()
@@ -38,13 +39,11 @@ public class Pedestrian : Actor
                 {
                     do
                     {
-                        _randomWalkTowards = new Vector3(
-                            Random.Range(-boundingBoxSize.x, boundingBoxSize.x) / 2, 0,
-                            Random.Range(-boundingBoxSize.z, boundingBoxSize.z) / 2) + boundingBoxPos;
+                        RandomPoint(BoundingBoxPos, boundingBoxRadius, out _randomWalkTowards);
                     } while (Vector3.Distance(transform.position, _randomWalkTowards) < minDistance);
                     _isAtDestination = false;
                 }
-                if (Vector3.Distance(transform.position, _randomWalkTowards) < 0.5f)
+                if (Vector3.Distance(transform.position, _randomWalkTowards) < 1f)
                 { _isAtDestination = true; }
                 agent.SetDestination(_randomWalkTowards);
                 break;
@@ -72,10 +71,25 @@ public class Pedestrian : Actor
         Vector3 downwardVel = new Vector3(0, gravity * Time.deltaTime);
         controller.Move((controller.velocity + downwardVel) * Time.deltaTime);
     }
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            Vector3 randomPoint = center + Random.insideUnitSphere * range;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                result = hit.position;
+                return true;
+            }
+        }
+        result = Vector3.zero;
+        return false;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boundingBoxPos, boundingBoxSize);
+        Gizmos.DrawWireSphere(BoundingBoxPos, boundingBoxRadius);
         //Gizmos.DrawWireSphere(transform.position, minDistance);
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
