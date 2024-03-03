@@ -35,7 +35,7 @@ public class Character : MonoBehaviour, IDamageable
     }
     
     private Vector3 _moveDirection;
-    private Vector3 _lookDirection = new Vector3(0.0001f, 0, 0.0001f);
+    private Vector3 _lookDirection = new Vector3(1, 0, 1);
     private Vector3 _velocity;
     private Vector3 _lastVelocity;
     private Vector3 _downwardVel;
