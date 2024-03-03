@@ -6,6 +6,7 @@ using UnityEngine;
 public class Character : MonoBehaviour, IDamageable
 {
     public CharacterController controller;
+    public Animator animator;
     public float speed;
     public int maxHealth;
     public float stompCooldown;
@@ -42,10 +43,9 @@ public class Character : MonoBehaviour, IDamageable
             _canStomp = _isGrounded && _currentCooldown == 0;
             _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
-            if (_canStomp)
-            {
-                
-            }
+
+            animator.SetBool("Walking", _moveDirection.magnitude > 1);
+            
 
             if (Input.GetButtonDown("Stomp"))
             {
@@ -58,7 +58,7 @@ public class Character : MonoBehaviour, IDamageable
 
 
             _moveDirection = IsoNormalize(_moveDirection);
-           
+            
 
             _velocity = _moveDirection * speed * Time.deltaTime;
             transform.LookAt(transform.position + _moveDirection);
