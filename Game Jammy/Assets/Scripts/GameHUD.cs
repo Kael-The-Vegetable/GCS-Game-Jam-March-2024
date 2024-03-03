@@ -50,6 +50,8 @@ public class GameHUD : MonoBehaviour
             case GameState.Playing:
                 _score.text = $"Victims To KILL: {civiliansAlive}\nTime Remaining: {timeRemaining:0.00}";
                 timeRemaining -= Time.deltaTime;
+                if (timeRemaining <= 0)
+                { state = GameState.GameOver; }
                 break;
             case GameState.GameOver:
 

@@ -79,7 +79,7 @@ public class Character : MonoBehaviour, IDamageable
     void Update()
     {
         _isGrounded = Physics.Raycast(_groundCheck.position, Vector2.down, 0.3f, groundmask);
-        if (!WorldManager.Global.isPlaying)
+        if (!WorldManager.Global.isPlaying || WorldManager.Global.timeRemaining <= 0)
         { _alive = false; }
         else 
         { _alive = true; }
