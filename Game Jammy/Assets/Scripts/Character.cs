@@ -9,13 +9,15 @@ public class Character : MonoBehaviour, IDamageable
     public float speed;
     public int maxHealth;
     public float stompCooldown;
-    public ParticleSystem walkingParticles;
+    public Transform _groundCheck;
+    public LayerMask groundmask;
 
     private float _currentCooldown;
     private int _currentHealth;
     private bool _isGrounded = false;
     private bool _canStomp = false;
     private bool _alive;
+    
     private Vector3 _moveDirection;
     private Vector3 _velocity;
     private Vector3 _lastVelocity;
@@ -30,6 +32,8 @@ public class Character : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        _isGrounded = Physics.Raycast(_groundCheck.position, Vector2.down, 0.3f, groundmask);
+
         if (_alive) // if alive then you can do all this.
         {
             // if the character is grounded and the cooldown is 0, then the character can jump
@@ -41,17 +45,9 @@ public class Character : MonoBehaviour, IDamageable
                 Stomp();
             }
 
-            Debug.Log(controller.isGrounded);
+            Debug.Log(_isGrounded);
             _moveDirection = IsoNormalize(_moveDirection);
-            if (_moveDirection.magnitude == 1 && controller.isGrounded)
-            {
-                Debug.Log("Play");
-                walkingParticles.Play();
-            }
-            else
-            {
-                walkingParticles.Stop();
-            }
+           
 
             _velocity = _moveDirection * speed * Time.deltaTime;
             transform.LookAt(transform.position + _moveDirection);
@@ -62,18 +58,17 @@ public class Character : MonoBehaviour, IDamageable
             }
         }
 
-        if (!controller.isGrounded)
+        if (!_isGrounded)
         {
             Gravity();
         }
         else
         {
-            
             _downwardVel = Vector3.zero;
         }
 
 
-        controller.Move(Vector3.Slerp(_lastVelocity, _velocity, 0.5f));
+        controller.Move(_velocity);
         _lastVelocity = _velocity;
     }
     private void Gravity()
@@ -81,6 +76,7 @@ public class Character : MonoBehaviour, IDamageable
         float gravity = WorldManager.Global.Gravity;
         _downwardVel = Vector3.up * gravity * Time.deltaTime;
         _downwardVel = (controller.velocity + _downwardVel) * Time.deltaTime;
+        _velocity += _downwardVel;
     }
 
 
