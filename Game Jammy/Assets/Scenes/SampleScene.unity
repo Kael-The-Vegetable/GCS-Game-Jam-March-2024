@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitBox: {fileID: 878133032}
-  _attackCooldown: 3
+  attackCooldown: 0
   _attackDamage: 10
 --- !u!1 &618156230
 GameObject:
