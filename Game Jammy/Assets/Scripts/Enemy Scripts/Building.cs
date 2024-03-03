@@ -39,6 +39,11 @@ public class Building : MonoBehaviour, IDamageable
         _currentHealth -= damage;
         Debug.Log($"Current Health {_currentHealth}");
         state = Damaged.Damaged;
+        if (damage > 10)
+        {
+            CameraShaker.Invoke();
+        }
+        
         if (_currentHealth <= 0)
         {
             state = Damaged.Destroyed;

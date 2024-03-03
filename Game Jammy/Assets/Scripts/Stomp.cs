@@ -13,6 +13,7 @@ public class Stomp : Attack
 
     public void DealDamage()
     {
+        CameraShaker.Invoke();
         base.OnAttack();
     }
 

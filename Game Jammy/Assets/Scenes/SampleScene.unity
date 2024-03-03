@@ -2293,9 +2293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04158a9ac1b60540be695291e412ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
-  positionStrength: {x: 0, y: 0, z: 0}
-  rotationalStrength: {x: 0, y: 0, z: 0}
+  cameraTransform: {fileID: 963194228}
+  positionStrength: {x: 1, y: 1, z: 1}
+  rotationalStrength: {x: 1, y: 1, z: 1}
 --- !u!4 &1799835469
 Transform:
   m_ObjectHideFlags: 0

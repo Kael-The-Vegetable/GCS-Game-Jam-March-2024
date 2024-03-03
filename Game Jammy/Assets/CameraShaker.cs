@@ -19,17 +19,12 @@ public class CameraShaker : MonoBehaviour
 
     private void OnEnable() => OnCameraShake += CameraShake;
     private void OnDisable() => OnCameraShake -= CameraShake;
-    
-
-    private void Awake()
-    {
-        
-    }
 
     private void CameraShake()
     {
-        transform.DOComplete();
-        transform.DOShakePosition(0.4f,positionStrength);
-        transform.DOShakeRotation(0.4f, rotationalStrength);
+        Debug.Log("Hi squidward");
+        cameraTransform.DOComplete();
+        cameraTransform.DOShakePosition(0.4f,positionStrength);
+        cameraTransform.DOShakeRotation(0.4f, rotationalStrength);
     }
 }
