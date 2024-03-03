@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEditor.AI;
+using UnityEngine.AI;
 
 public class Pedestrian : Actor
 {
@@ -9,6 +11,7 @@ public class Pedestrian : Actor
     public Vector3 boundingBoxSize;
     public float minDistance;
 
+    public NavMeshAgent agent;
 
     private Vector3 _randomWalkTowards;
     private bool _isAtDestination;
@@ -43,7 +46,7 @@ public class Pedestrian : Actor
                 }
                 if (Vector3.Distance(transform.position, _randomWalkTowards) < 0.5f)
                 { _isAtDestination = true; }
-                Move(_randomWalkTowards);
+                agent.SetDestination(_randomWalkTowards);
                 break;
             case ActorState.Falling:
                 Gravity();
@@ -59,7 +62,7 @@ public class Pedestrian : Actor
 
                 break;
             case ActorState.Dead:
-
+                transform.localScale = new Vector3(transform.localScale.x, 0.1f, transform.localScale.z);
                 break;
         }
     }
