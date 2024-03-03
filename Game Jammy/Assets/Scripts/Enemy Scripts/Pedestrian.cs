@@ -85,7 +85,5 @@ public class Pedestrian : Actor
         Gizmos.DrawWireCube(BoundingBoxPos, boundingBoxSize * 2);
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(_randomWalkTowards, 0.1f);
-        Gizmos.color = (state == ActorState.Panic) ? Color.green : Color.clear;
-        Gizmos.DrawWireSphere(transform.position, scaredDistance);
     }
 }
