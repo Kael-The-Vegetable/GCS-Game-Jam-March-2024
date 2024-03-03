@@ -19,6 +19,9 @@ public class GameHUD : MonoBehaviour
     private Image _menuOverlay;
     private GameObject _button;
     private TextMeshProUGUI _score;
+    private GameObject _instruction;
+    private RawImage[] _actionImages = new RawImage[3];
+    private Attack[] _action = new Attack[2];
     public int civiliansAlive;
     public float timeRemaining;
 
@@ -29,6 +32,11 @@ public class GameHUD : MonoBehaviour
         _menuOverlay = GameObject.Find("MenuOverlay").GetComponent<Image>();
         _button = GameObject.Find("Button");
         _score = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+        _instruction = GameObject.Find("Instruction");
+        _actionImages = _instruction.GetComponentsInChildren<RawImage>();
+        GameObject player = GameObject.FindWithTag("Player");
+        _action[0] = player.GetComponentInChildren<Punch>();
+        _action[1] = player.GetComponentInChildren<Stomp>();
     }
 
     
@@ -40,6 +48,7 @@ public class GameHUD : MonoBehaviour
                 _message.text = "<size=60>Is it Big WEEVIL?</size>\n<size=20>or smol ppl?</size>";
                 _menuOverlay.enabled = true;
                 _score.enabled = false;
+                _instruction.SetActive(false);
                 break;
             case GameState.Initialize:
                 _message.enabled = false;
@@ -47,11 +56,20 @@ public class GameHUD : MonoBehaviour
                 _button.SetActive(false);
                 _score.enabled = true;
                 Camera.main.GetComponent<CameraController>().cameraState = CameraController.CameraStates.Following;
+                _instruction.SetActive(true);
                 state = GameState.Playing;
                 break;
             case GameState.Playing:
                 _score.text = $"Victims To KILL: {civiliansAlive}\nTime Remaining: {timeRemaining:0.00}";
                 timeRemaining -= Time.deltaTime;
+
+                for (int i = 0; i < _action.Length; i++)
+                {
+                    Color tempColour = _actionImages[i+1].color;
+                    tempColour.a = Mathf.Abs(_action[i].currentAttackCooldown / _action[i].attackCooldown - 1);
+                    _actionImages[i+1].color = tempColour;
+                }
+
                 if (timeRemaining <= 0)
                 {
                     timeRemaining = 0;
