@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 1172049357}
   - component: {fileID: 1172049356}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: MenuOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1816,7 +1816,7 @@ GameObject:
   - component: {fileID: 1417612489}
   - component: {fileID: 1417612488}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2188,7 +2188,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1777829844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2032616955}
+        m_TargetAssemblyTypeName: GameHUD, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1777829844
 MonoBehaviour:
   m_ObjectHideFlags: 0
