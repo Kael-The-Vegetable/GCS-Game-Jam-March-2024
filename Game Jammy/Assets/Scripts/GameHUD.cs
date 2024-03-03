@@ -24,7 +24,6 @@ public class GameHUD : MonoBehaviour
         _message = GameObject.Find("Message").GetComponent<TextMeshProUGUI>();
         _menuOverlay = GameObject.Find("MenuOverlay").GetComponent<Image>();
         _button = GameObject.Find("Button");
-        _buttonText = _button.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     
