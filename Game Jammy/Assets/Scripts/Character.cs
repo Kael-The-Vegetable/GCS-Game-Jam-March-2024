@@ -85,7 +85,7 @@ public class Character : MonoBehaviour, IDamageable
             {
                 case CharacterStates.Walking:
                    
-                    animator.SetBool("Walking", _moveDirection.magnitude > 1);
+                    animator.SetBool("Walking", true);
                     break;
                 case CharacterStates.Jumping:
                     break;
@@ -94,6 +94,7 @@ public class Character : MonoBehaviour, IDamageable
                 case CharacterStates.Punching:
                     break;
                 default:
+                    animator.SetBool("Walking", false);
                     break;
             }
 
