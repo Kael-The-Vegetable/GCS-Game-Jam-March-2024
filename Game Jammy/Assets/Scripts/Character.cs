@@ -18,10 +18,10 @@ public class Character : MonoBehaviour, IDamageable
     private float _currentCooldown;
     private int _currentHealth;
     private bool _isGrounded = false;
-    private bool _canStomp = false;
+    private bool _canJump = false;
     private bool _alive;
 
-
+    private CharacterStates _currentState;
     private enum CharacterStates
     {
         Idle,
@@ -29,13 +29,31 @@ public class Character : MonoBehaviour, IDamageable
         Stomping,
         Punching,
         Jumping
-
     }
     
     private Vector3 _moveDirection;
     private Vector3 _velocity;
     private Vector3 _lastVelocity;
     private Vector3 _downwardVel;
+
+    void HandleMovement()
+    {
+        _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        _moveDirection = IsoNormalize(_moveDirection);
+        _velocity = _moveDirection * speed * Time.deltaTime;
+        transform.LookAt(transform.position + _moveDirection);
+
+        _currentState = CharacterStates.Walking;
+
+        if (!_isGrounded)
+        {
+            Gravity();
+        }
+        else
+        {
+            _downwardVel = Vector3.zero;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -50,12 +68,30 @@ public class Character : MonoBehaviour, IDamageable
 
         if (_alive) // if alive then you can do all this.
         {
+            
+
+
+            switch (_currentState)
+            {
+                case CharacterStates.Walking:
+                    HandleMovement();
+                    animator.SetBool("Walking", _moveDirection.magnitude > 1);
+                    break;
+                case CharacterStates.Jumping:
+                    break;
+                case CharacterStates.Stomping:
+                    break;
+                case CharacterStates.Punching:
+                    break;
+                default:
+                    HandleMovement();
+                    break;
+            }
+
+
             // if the character is grounded and the cooldown is 0, then the character can jump
-            _canStomp = _isGrounded && _currentCooldown == 0;
-            _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-
-
-            animator.SetBool("Walking", _moveDirection.magnitude > 1);
+            _canJump = _isGrounded && _currentCooldown == 0;
+           
             
 
             if (Input.GetButtonDown("Stomp"))
@@ -67,12 +103,7 @@ public class Character : MonoBehaviour, IDamageable
                 punch.OnAttack();
             }
 
-
-            _moveDirection = IsoNormalize(_moveDirection);
-            
-
-            _velocity = _moveDirection * speed * Time.deltaTime;
-            transform.LookAt(transform.position + _moveDirection);
+           
 
             if (_currentHealth <= 0)
             {
@@ -80,14 +111,11 @@ public class Character : MonoBehaviour, IDamageable
             }
         }
 
-        if (!_isGrounded)
-        {
-            Gravity();
-        }
-        else
-        {
-            _downwardVel = Vector3.zero;
-        }
+        
+
+
+        
+
 
 
         controller.Move(_velocity);
