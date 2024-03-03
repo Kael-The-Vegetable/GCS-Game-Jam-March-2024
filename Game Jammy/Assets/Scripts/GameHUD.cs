@@ -37,6 +37,7 @@ public class GameHUD : MonoBehaviour
                 _menuOverlay.enabled = true;
                 break;
             case GameState.Initialize:
+                _message.enabled = false;
                 _menuOverlay.enabled = false;
                 _button.SetActive(false);
                 state = GameState.Playing;
