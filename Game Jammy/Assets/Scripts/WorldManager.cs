@@ -26,7 +26,7 @@ public class WorldManager : MonoBehaviour
 
     private void Awake()
     {
-        if ( Global is not null && Global != this)
+        if (Global is not null && Global != this)
         { Destroy(gameObject); }
         else
         { Global = this; }
@@ -37,6 +37,12 @@ public class WorldManager : MonoBehaviour
     private void Update()
     {
         PlayerPos = _player.transform.position;
+    }
+
+
+    private void OnDestroy()
+    {
+        Global = null;
     }
 
 }
