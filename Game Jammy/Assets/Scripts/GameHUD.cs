@@ -11,6 +11,7 @@ public class GameHUD : MonoBehaviour
         MainMenu,
         Initialize,
         Playing,
+        InitializeGameOver,
         GameOver
     }
     public GameState state { get; private set; }
@@ -51,7 +52,13 @@ public class GameHUD : MonoBehaviour
                 _score.text = $"Victims To KILL: {civiliansAlive}\nTime Remaining: {timeRemaining:0.00}";
                 timeRemaining -= Time.deltaTime;
                 if (timeRemaining <= 0)
-                { state = GameState.GameOver; }
+                {
+                    timeRemaining = 0;
+                    state = GameState.InitializeGameOver; 
+                }
+                break;
+            case GameState.InitializeGameOver:
+
                 break;
             case GameState.GameOver:
 
