@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class Character : MonoBehaviour, IDamageable
@@ -20,6 +21,7 @@ public class Character : MonoBehaviour, IDamageable
     private bool _isGrounded = false;
     private bool _canJump = false;
     private bool _alive;
+    private bool _attacking = false;
 
     private CharacterStates _currentState;
     private enum CharacterStates
@@ -68,13 +70,15 @@ public class Character : MonoBehaviour, IDamageable
 
         if (_alive) // if alive then you can do all this.
         {
-            
-
+            if (_attacking == false)
+            {
+                HandleMovement();
+            }
 
             switch (_currentState)
             {
                 case CharacterStates.Walking:
-                    HandleMovement();
+                   
                     animator.SetBool("Walking", _moveDirection.magnitude > 1);
                     break;
                 case CharacterStates.Jumping:
@@ -84,7 +88,6 @@ public class Character : MonoBehaviour, IDamageable
                 case CharacterStates.Punching:
                     break;
                 default:
-                    HandleMovement();
                     break;
             }
 
