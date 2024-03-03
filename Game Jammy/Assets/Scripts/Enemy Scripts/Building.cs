@@ -10,7 +10,9 @@ public class Building : MonoBehaviour, IDamageable
     private int _currentHealth;
     public AudioSource damageSound;
     public Mesh destroyedMesh;
+    public Material destroyedMaterial;
     private MeshFilter _filter;
+    private MeshRenderer _renderer;
     public enum Damaged
     {
         Undamaged,
@@ -31,6 +33,7 @@ public class Building : MonoBehaviour, IDamageable
         damageSound.clip = (AudioClip)Resources.Load("BuildingDamage/DebrisHit" + Random.Range(1, 2).ToString());
         
         _filter = GetComponent<MeshFilter>();
+        _renderer = GetComponent<MeshRenderer>();
         _currentHealth = maxHealth;
         state = Damaged.Undamaged;
     }
@@ -66,9 +69,11 @@ public class Building : MonoBehaviour, IDamageable
             {
                 state = Damaged.Destroyed;
                 _filter.mesh = destroyedMesh;
+                _renderer.material = destroyedMaterial;
                 switch (size)
                 {
                     case SizeCategory.Small:
+                        transform.position = transform.position - new Vector3(0, 1.52f, 0); // realign new position
                         break;
                     case SizeCategory.Medium:
                         break;
