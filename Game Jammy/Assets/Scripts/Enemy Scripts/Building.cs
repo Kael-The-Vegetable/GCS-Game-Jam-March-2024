@@ -57,7 +57,6 @@ public class Building : MonoBehaviour, IDamageable
         if (state != Damaged.Destroyed)
         {
             _currentHealth -= damage;
-            Debug.Log($"Current Health {_currentHealth}");
             damageSound.pitch = Random.Range(0.5f, 1.5f);
             state = Damaged.Damaged;
             damageSound.Play();
