@@ -75,7 +75,7 @@ public class Character : MonoBehaviour, IDamageable
     {
         float gravity = WorldManager.Global.Gravity;
         _downwardVel = Vector3.up * gravity * Time.deltaTime;
-        _downwardVel = (controller.velocity + _downwardVel) * Time.deltaTime;
+        // _downwardVel = (_downwardVel) * Time.deltaTime;
         _velocity += _downwardVel;
     }
 
