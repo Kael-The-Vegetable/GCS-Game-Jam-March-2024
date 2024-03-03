@@ -19,6 +19,7 @@ public class GameHUD : MonoBehaviour
     private GameObject _button;
     private TextMeshProUGUI _score;
     public int civiliansAlive;
+    public float timeRemaining;
 
     void Awake()
     {
@@ -47,7 +48,8 @@ public class GameHUD : MonoBehaviour
                 state = GameState.Playing;
                 break;
             case GameState.Playing:
-                _score.text = $"Victims To KILL: {civiliansAlive}";
+                _score.text = $"Victims To KILL: {civiliansAlive}\nTime Remaining: {timeRemaining:0.00}";
+                timeRemaining -= Time.deltaTime;
                 break;
             case GameState.GameOver:
 

@@ -18,6 +18,10 @@ public class WorldManager : MonoBehaviour
     { 
         get { return _hud.state == GameHUD.GameState.Playing; }
     }
+    public float timeRemaining
+    {
+        get { return _hud.timeRemaining; }
+    }
     #endregion
 
     private void Awake()
