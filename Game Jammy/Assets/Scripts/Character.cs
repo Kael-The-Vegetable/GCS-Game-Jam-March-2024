@@ -79,7 +79,6 @@ public class Character : MonoBehaviour, IDamageable
     void Update()
     {
         _isGrounded = Physics.Raycast(_groundCheck.position, Vector2.down, 0.3f, groundmask);
-
         if (_alive) // if alive then you can do all this.
         {
             _currentState = CharacterStates.Idle;
@@ -142,12 +141,8 @@ public class Character : MonoBehaviour, IDamageable
     {
         float gravity = WorldManager.Global.Gravity;
         _downwardVel = Vector3.up * gravity * Time.deltaTime;
-        // _downwardVel = (_downwardVel) * Time.deltaTime;
         _velocity += _downwardVel;
     }
-
-
-    
 
     Vector3 IsoNormalize(Vector3 dir)
     {

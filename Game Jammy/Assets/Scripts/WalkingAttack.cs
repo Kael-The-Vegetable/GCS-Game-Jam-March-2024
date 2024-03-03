@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class WalkingAttack : Attack
 {
-    
+    public override void OnAttack()
+    {
+        base.OnAttack();
+    }
 }

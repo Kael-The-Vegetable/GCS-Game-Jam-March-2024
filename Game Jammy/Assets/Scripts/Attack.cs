@@ -12,7 +12,6 @@ public abstract class Attack : MonoBehaviour
 
 
     private float _currentAttackCooldown;
-    private List<Collider> _hitList = new List<Collider>();
 
 
     private void Start()
@@ -49,13 +48,11 @@ public abstract class Attack : MonoBehaviour
 
             for (int i = 0; i < hits.Length; i++)
             {
-                if (_hitList.Contains(hits[i]) == false)
+                IDamageable damageable = hits[i].GetComponent<IDamageable>();
+                if (!hits[i].CompareTag(transform.tag))
                 {
-                    IDamageable damageable = hits[i].GetComponent<IDamageable>();
-
                     if (damageable != null)
                     {
-                        _hitList.Add(hits[i]);
                         damageable.TakeDamage(_attackDamage);
                     }
                 }

@@ -37,6 +37,7 @@ public class Building : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        Debug.Log($"Current Health {_currentHealth}");
         state = Damaged.Damaged;
         if (_currentHealth <= 0)
         {

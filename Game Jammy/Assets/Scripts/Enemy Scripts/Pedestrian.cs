@@ -105,8 +105,6 @@ public class Pedestrian : Actor
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(BoundingBoxPos, boundingBoxSize * 2);
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(agent.destination, 0.1f);
     }

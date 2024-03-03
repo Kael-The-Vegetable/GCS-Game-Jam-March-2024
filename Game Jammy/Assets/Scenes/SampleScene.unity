@@ -946,7 +946,7 @@ MonoBehaviour:
   _hitBox: {fileID: 878133032}
   attackCooldown: 3
   canAttack: 0
-  _attackDamage: 5
+  _attackDamage: 10
 --- !u!114 &599750078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitBox: {fileID: 273330604}
-  attackCooldown: 0
+  attackCooldown: 0.2
   canAttack: 0
   _attackDamage: 1
 --- !u!1 &676497276
