@@ -20,6 +20,7 @@ public class GameHUD : MonoBehaviour
     public AudioClip playMusic;
     public AudioSource playMusicSource;
     public TextMeshProUGUI buttonText;
+
     private TextMeshProUGUI _message;
     private Image _menuOverlay;
     private GameObject _button;
@@ -27,6 +28,8 @@ public class GameHUD : MonoBehaviour
     private GameObject _instruction;
     private RawImage[] _actionImages = new RawImage[3];
     private Attack[] _action = new Attack[2];
+    private CameraController _camera;
+
     public int civiliansAlive;
     public float timeRemaining;
 
@@ -42,6 +45,7 @@ public class GameHUD : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         _action[0] = player.GetComponentInChildren<Punch>();
         _action[1] = player.GetComponentInChildren<Stomp>();
+        _camera = Camera.main.GetComponent<CameraController>();
     }
 
     
@@ -50,7 +54,7 @@ public class GameHUD : MonoBehaviour
         switch(state)
         {
             case GameState.MainMenu:
-                _message.text = "<size=60>Is it Big WEEVIL?</size>\n<size=20>or smol ppl?</size>";
+                _message.text = "<size=60>Is it big WEEVIL?</size>\n<size=30>or tiny people?</size>";
                 _menuOverlay.enabled = true;
                 _score.enabled = false;
                 _instruction.SetActive(false);
@@ -60,7 +64,7 @@ public class GameHUD : MonoBehaviour
                 _menuOverlay.enabled = false;
                 _button.SetActive(false);
                 _score.enabled = true;
-                Camera.main.GetComponent<CameraController>().cameraState = CameraController.CameraStates.Following;
+                _camera.cameraState = CameraController.CameraStates.Following;
                 _instruction.SetActive(true);
                 playMusicSource.clip = playMusic;
                 playMusicSource.Play();
@@ -93,7 +97,7 @@ public class GameHUD : MonoBehaviour
                 _message.enabled = true;
                 _menuOverlay.enabled = true;
                 _button.SetActive(true);
-                buttonText.text = "Continue";
+                buttonText.text = "Ingest MORE!";
                 break;
         }
     }
