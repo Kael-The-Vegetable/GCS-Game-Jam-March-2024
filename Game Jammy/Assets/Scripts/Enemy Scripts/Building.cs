@@ -73,7 +73,7 @@ public class Building : MonoBehaviour, IDamageable
                     case SizeCategory.Medium:
                         break;
                     case SizeCategory.Large:
-                        transform.position = transform.position - new Vector3(0.5f, 6, 0.5f); // realign new position
+                        transform.position = transform.position - new Vector3(0.4f, 6, 0.4f); // realign new position
                         break;
                 }
                 
