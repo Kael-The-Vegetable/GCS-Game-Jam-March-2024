@@ -19,6 +19,7 @@ public class GameHUD : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip playMusic;
     public AudioSource playMusicSource;
+    public TextMeshProUGUI buttonText;
     private TextMeshProUGUI _message;
     private Image _menuOverlay;
     private GameObject _button;
@@ -88,12 +89,24 @@ public class GameHUD : MonoBehaviour
                 state = GameState.GameOver;
                 break;
             case GameState.GameOver:
-                SceneManager.LoadScene(0);
+                _message.text = "The radioactive juice ran out :(";
+                _message.enabled = true;
+                _menuOverlay.enabled = true;
+                _button.SetActive(true);
+                buttonText.text = "Continue";
                 break;
         }
     }
     public void Play()
     {
-        state = GameState.Initialize;
+        if (state == GameState.GameOver)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            state = GameState.Initialize;
+        }
+       
     }
 }
