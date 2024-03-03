@@ -9,6 +9,7 @@ public class GameHUD : MonoBehaviour
     public enum GameState
     {
         MainMenu,
+        Initialize,
         Playing,
         GameOver
     }
@@ -35,9 +36,12 @@ public class GameHUD : MonoBehaviour
                 _message.text = "<size=60>Is it Big WEEVIL?</size>\n<size=20>or smol ppl?</size>";
                 _menuOverlay.enabled = true;
                 break;
-            case GameState.Playing:
+            case GameState.Initialize:
                 _menuOverlay.enabled = false;
                 _button.SetActive(false);
+                state = GameState.Playing;
+                break;
+            case GameState.Playing:
                 break;
             case GameState.GameOver:
 
@@ -46,6 +50,6 @@ public class GameHUD : MonoBehaviour
     }
     public void Play()
     {
-        state = GameState.Playing;
+        state = GameState.Initialize;
     }
 }
