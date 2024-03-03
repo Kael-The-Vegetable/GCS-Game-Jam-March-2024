@@ -11,6 +11,8 @@ public class Character : MonoBehaviour, IDamageable
     public float stompCooldown;
     public Transform _groundCheck;
     public LayerMask groundmask;
+    public Attack stomp;
+    public Attack jump;
 
     private float _currentCooldown;
     private int _currentHealth;
@@ -45,7 +47,7 @@ public class Character : MonoBehaviour, IDamageable
                 Stomp();
             }
 
-            if (Input.GetMouseButton(1))
+            if (Input.GetButtonDown("Fire"))
             {
 
             }
@@ -84,10 +86,7 @@ public class Character : MonoBehaviour, IDamageable
     }
 
 
-    void Stomp()
-    {
-        _currentCooldown = stompCooldown;
-    }
+    
 
     Vector3 IsoNormalize(Vector3 dir)
     {
