@@ -45,6 +45,11 @@ public class Character : MonoBehaviour, IDamageable
                 Stomp();
             }
 
+            if (Input.GetMouseButton(1))
+            {
+
+            }
+
             _moveDirection = IsoNormalize(_moveDirection);
            
 
