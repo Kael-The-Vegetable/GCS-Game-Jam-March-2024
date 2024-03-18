@@ -3408,7 +3408,7 @@ MonoBehaviour:
   playMusicSource: {fileID: 1056275326}
   buttonText: {fileID: 1502732413}
   civiliansAlive: 0
-  timeRemaining: 120
+  timeRemaining: 153
 --- !u!4 &2037888209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6349458703188194950, guid: fca0bf6153e132c4aa3c0a68eb520091, type: 3}
