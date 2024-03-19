@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ public class GameHUD : MonoBehaviour
     public AudioClip playMusic;
     public AudioSource playMusicSource;
     public TextMeshProUGUI buttonText;
+    public InputAction quitInput;
 
     private TextMeshProUGUI _message;
     private Image _menuOverlay;
@@ -33,6 +35,16 @@ public class GameHUD : MonoBehaviour
 
     public int civiliansAlive;
     public float timeRemaining;
+
+    private void OnEnable()
+    {
+        quitInput.Enable();
+    }
+
+    private void Disable()
+    {
+        quitInput.Disable();
+    }
 
     void Awake()
     {
@@ -52,7 +64,7 @@ public class GameHUD : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (quitInput.ReadValue<float>() > 0)
         { Application.Quit(); }
         switch(state)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour, IDamageable
 {
@@ -16,14 +17,30 @@ public class Character : MonoBehaviour, IDamageable
     public bool attacking = false;
     public CharacterStates currentState;
 
+    public InputAction moveInput;
+    public InputAction stompInput;
+    public InputAction punchInput;
+
     private float _currentCooldown;
     private int _currentHealth;
     private bool _isGrounded = false;
     private bool _canJump = false;
     private bool _alive;
-    
 
-   
+    private void OnEnable()
+    {
+        moveInput.Enable();
+        stompInput.Enable();
+        punchInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveInput.Disable();
+        stompInput.Disable();
+        punchInput.Disable();
+    }
+
     public enum CharacterStates
     {
         Idle,
@@ -31,7 +48,8 @@ public class Character : MonoBehaviour, IDamageable
         Stomping,
         Punching
     }
-    
+
+    private Vector2 _inputMoveDirection;
     private Vector3 _moveDirection;
     private Vector3 _lookDirection = new Vector3(1, 0, 1);
     private Vector3 _velocity;
@@ -40,7 +58,8 @@ public class Character : MonoBehaviour, IDamageable
 
     void HandleMovement()
     {
-        _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        _inputMoveDirection = moveInput.ReadValue<Vector2>();
+        _moveDirection = new Vector3(_inputMoveDirection.x, 0, _inputMoveDirection.y).normalized;
         _moveDirection = IsoNormalize(_moveDirection);
         _velocity = _moveDirection * speed * Time.deltaTime;
 
@@ -83,12 +102,12 @@ public class Character : MonoBehaviour, IDamageable
             if (attacking == false)
             {
                 HandleMovement();
-                if (Input.GetButtonDown("Stomp"))
+                if (stompInput.ReadValue<float>() > 0.5)
                 {
                     stomp.OnAttack();
                     currentState = CharacterStates.Stomping;
                 }
-                else if (Input.GetButtonDown("Punch"))
+                else if (punchInput.ReadValue<float>() > 0.5)
                 {
                     punch.OnAttack();
                     currentState = CharacterStates.Punching;
